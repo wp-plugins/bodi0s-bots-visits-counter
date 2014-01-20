@@ -11,21 +11,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Count web spiders, crawlers and bots visits of your blog. 
 
 == Description ==
-Count web spiders, crawlers and bots visits of your blog. 
-Also can count any other visit, the plug-in is looking for patterns in user-agent string, which string can be customized.
+Count the visits from web spiders, crawlers and bots in your blog. 
+Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
 
 == Installation ==
-
 This section describes how to install the plugin and get it working.
 
 1. Upload unzipped archive of the plugin to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
-N/A
+None
 
 == Screenshots ==
-N/A
+None
 
 == Changelog ==
 
