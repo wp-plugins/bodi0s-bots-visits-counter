@@ -8,7 +8,7 @@ Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Count web spiders, crawlers and bots visits of your blog. 
+Count the visits from web spiders, crawlers and bots in your blog. 
 
 == Description ==
 Count the visits from web spiders, crawlers and bots in your blog. 
@@ -30,11 +30,11 @@ None
 
 = 0.2 =
 Added internationalization support. For now Bulgarian and English only.
-Added filter of table results.
-Added more statistics in results table.
-Added geo-location search by bot`s IP address.
-Improved plugin`s security.
-Various small bugfixes and improvements.
+Added ability to filter the bot list results.
+Added additional statistics.
+Added geo-location search by bot's IP address.
+Improved plugin's security.
+Various small bug-fixes and improvements.
 
 = 0.1 =
 Initial release.
