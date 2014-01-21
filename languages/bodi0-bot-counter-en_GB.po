@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bodi0 bot visits counter\n"
+"POT-Creation-Date: 2014-01-21 16:27+0200\n"
+"PO-Revision-Date: 2014-01-21 16:27+0200\n"
+"Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../bodi0-bot-admin.php:45
+msgid "Bot visits Stats"
+msgstr "Bot visits Stats"
+
+#: ../bodi0-bot-admin.php:45
+msgid " were reset"
+msgstr " were reset"
+
+#: ../bodi0-bot-admin.php:60
+msgid "New Bot"
+msgstr "New Bot"
+
+#: ../bodi0-bot-admin.php:60
+msgid "added"
+msgstr "added"
+
+#: ../bodi0-bot-admin.php:74
+msgid "The Bot was deleted"
+msgstr "The Bot was deleted"
+
+#: ../bodi0-bot-admin.php:111
+msgid "Bot visits counter [Admin]"
+msgstr "Bot visits counter [Admin]"
+
+#: ../bodi0-bot-admin.php:112
+msgid "Reset Stats"
+msgstr "Reset Stats"
+
+#: ../bodi0-bot-admin.php:113
+msgid ""
+"The list, by default, is ordered by number of visits, click on arrow to re-"
+"order"
+msgstr ""
+"The list, by default, is ordered by number of visits, click on arrow to re-"
+"order"
+
+#: ../bodi0-bot-admin.php:114
+msgid "Refresh statistics"
+msgstr "Refresh statistics"
+
+#: ../bodi0-bot-admin.php:186
+msgid "Filter list"
+msgstr "Filter list"
+
+#: ../bodi0-bot-admin.php:193 ../bodi0-bot-admin.php:237
+msgid "Bot name"
+msgstr "Bot name"
+
+#: ../bodi0-bot-admin.php:194 ../bodi0-bot-admin.php:240
+msgid "Bot identifier"
+msgstr "Bot identifier"
+
+#: ../bodi0-bot-admin.php:195
+msgid "Visits"
+msgstr "Visits"
+
+#: ../bodi0-bot-admin.php:196
+msgid "Last visit"
+msgstr "Last visit"
+
+#: ../bodi0-bot-admin.php:197
+msgid "IP address"
+msgstr "IP address"
+
+#: ../bodi0-bot-admin.php:198
+msgid "Action"
+msgstr "Action"
+
+#: ../bodi0-bot-admin.php:213
+msgid "Delete"
+msgstr "Delete"
+
+#: ../bodi0-bot-admin.php:223
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#: ../bodi0-bot-admin.php:227 ../bodi0-bot-admin.php:242
+msgid "Add new Bot"
+msgstr "Add new Bot"
+
+#: ../bodi0-bot-admin.php:237
+msgid "up to 20 characters, required"
+msgstr "up to 20 characters, required"
+
+#: ../bodi0-bot-admin.php:240
+msgid "up to 100 characters, required"
+msgstr "up to 100 characters, required"
+
+#: ../bodi0-bot-admin.php:249
+msgid ""
+"Tip: You can also monitor misc web browser visits by defining appropriate "
+"user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
+msgstr ""
+"Tip: You can also monitor misc web browser visits by defining appropriate "
+"user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
+
+#: ../bodi0-bot-admin.php:251
+msgid "See the complete user agent string list of"
+msgstr "See the complete user agent string list of"
+
+#: ../bodi0-bot-admin.php:251
+msgid "bots"
+msgstr "bots"
+
+#: ../bodi0-bot-admin.php:252
+msgid ""
+"Remark: Some of the returned data includes GeoLite data created by MaxMind, "
+"available from http://www.maxmind.com"
+msgstr ""
+"Remark: Some of the returned data includes GeoLite data created by MaxMind, "
+"available from http://www.maxmind.com"
+
+#: ../bodi0-bot-admin.php:253
+msgid "If you find this plugin useful, I wont mind if you buy me a beer"
+msgstr "If you find this plugin useful, I wont mind if you buy me a beer"
+
+#: ../bodi0-bot-ajax.php:44
+msgid "Invalid AJAX action."
+msgstr "Invalid AJAX action."
+
+#: ../bodi0-bot-ajax.php:57
+msgid "Location info"
+msgstr "Location info"
+
+#: ../bodi0-bot-ajax.php:66
+msgid "Invalid IP address: "
+msgstr "Invalid IP address: "
+
+#: ../bodi0-bot-counter.php:194
+msgid "Bot visits counter"
+msgstr "Bot visits counter"
+
+#: ../bodi0-bot-counter.php:205
+msgid "Settings"
+msgstr "Settings"
+
+#~ msgid "You are not logged into Wordpress system."
+#~ msgstr "You are not logged into Wordpress system."
+
+#~ msgid "Bot mark"
+#~ msgstr "Bot mark"
+
+#~ msgid "Add Bot name"
+#~ msgstr "Add Bot name"
