@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or exit;
 Plugin`s Administration panel
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.2
+Version: 0.3
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -25,6 +25,7 @@ License: GPL2
 
 // Important: Check if current user is logged
 if ( !is_user_logged_in( ) )  die();
+
 //Security check
 $nonce = isset($_REQUEST['_wpnonce']) ? $_REQUEST['_wpnonce'] : '';
 
@@ -80,18 +81,41 @@ if (isset($_GET['bot']) && $_GET['bot']=='delete' && !empty($_GET['bot-id']) && 
 .geo-info {position: fixed; background: #fff; border:1px solid #ccc;left:75%;width:20%; cursor:pointer;z-index:10000;box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.196) !important}
 .geo-info .inner {margin:1em}
 a {text-decoration:none !important}
+.tablesorter-default .header,
+.tablesorter-default .tablesorter-header {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+	background-position: center right;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	white-space: normal;
+}
+.tablesorter-default thead .headerSortUp,
+.tablesorter-default thead .tablesorter-headerSortUp,
+.tablesorter-default thead .tablesorter-headerAsc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+	border-bottom: #000 2px solid;
+}
+.tablesorter-default thead .headerSortDown,
+.tablesorter-default thead .tablesorter-headerSortDown,
+.tablesorter-default thead .tablesorter-headerDesc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+	border-bottom: #000 2px solid;
+}
+.tablesorter-default thead .sorter-false {
+	background-image: none;
+	cursor: default;
+}
 </style>
-
 
 <div class="wrap">
 <h2><?php _e("Bot visits counter [Admin]","bodi0-bot-counter"); ?></h2>
 <p><a href="?page=<?php echo $_GET['page']; ?>&amp;bot-counter=reset"><?php _e("Reset Stats", "bodi0-bot-counter"); ?></a></p>
-<p><?php _e("The list is ordered by number of visits","bodi0-bot-counter"); ?>. </p>
+<p><?php _e("The list, by default, is ordered by number of visits, click on arrow to re-order","bodi0-bot-counter"); ?>. </p>
 <p class="alignright"><a href="?page=bodi0-bot-counter" class="alignleft"><?php _e("Refresh statistics", "bodi0-bot-counter"); ?></a>
 </p>
 <?php
 //Get all results of visits
-$results = $wpdb->get_results('SELECT * FROM '.__TABLE__.'  ORDER BY bot_visits DESC', ARRAY_A);
+$results = $wpdb->get_results('SELECT * FROM '.__TABLE__.' ORDER BY bot_visits DESC', ARRAY_A);
 ?>
 <script type="text/javascript">
 var $ = jQuery.noConflict();
@@ -116,12 +140,30 @@ function( msg ) {
 	$( "#"+content_id ).html( msg );
 });
 request.fail(
-function( jqXHR, textStatus ) {
-  alert( "Request failed: " + textStatus  );
+function( jqXHR, textStatus, ev ) {
+  alert( "AJAX request failed: " + textStatus + ev  );
 });
 	
 }
+
 </script>
+<script type="text/javascript" src="<?php echo plugin_dir_url( __FILE__ ) ?>js/table-sorter.js"></script>
+<script type="text/javascript">
+/*Sort the table*/
+$(document).ready(function(){
+  $("#bot-table").tablesorter();
+	$('#bot-table thead th a').on('click',function(e){
+		if($(this).html=='<strong>&uarr;</strong>') ($(this).html('<strong>&darr;</strong>'));
+		else $(this).html('<strong>&uarr;</strong>');
+		e.preventDefault();
+		});
+
+
+});
+
+</script>
+
+
 
 <script type="text/javascript">
 /*Courtesy of http://www.vonloesch.de/node/23 */
@@ -145,32 +187,41 @@ function filter (term, _id, cellNr) {
 <input name="filter" id="filter" onkeyup="filter(this, 'bot-table', 1)" type="text" placeholder="Type here..." style="vertical-align:middle;width:200px"/> <a href="javascript:void(0)" onclick="document.getElementById('filter').value=''; filter(document.getElementById('filter'), 'bot-table', 1)">Reset</a>
 </td></tr>
 </table>
-<table class="widefat" style="width:70% !important" id="bot-table">
+<table class="widefat" style="min-width:690px !important; max-width:720px !important" id="bot-table">
 <thead>
 <tr>
-<th><?php _e("Bot name","bodi0-bot-counter"); ?></th>
-<th><?php _e("Bot identifier","bodi0-bot-counter"); ?></th>
-<th><?php _e("Visits","bodi0-bot-counter"); ?></th>
-<th><?php _e("Last visit","bodi0-bot-counter"); ?></th>
-<th><?php _e("IP address","bodi0-bot-counter"); ?></th>
-<th><?php _e("Action","bodi0-bot-counter"); ?></th>
+<th><?php _e("Bot name","bodi0-bot-counter"); ?> <a href="#" class="arrow"><strong>&harr;</strong></a> </th>
+<th><?php _e("Bot identifier","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
+<th><?php _e("Visits","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
+<th><?php _e("Last visit","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
+<th><?php _e("IP address","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
+<th class="sorter-false"><?php _e("Action","bodi0-bot-counter"); ?></th>
+<th class="sorter-false"></th>
 </tr>
 </thead>
 <tbody>
 
 <?php
-
-//cycle
+//Counter
+$i = 0;
+//The cycle
 foreach($results as $result) {
-	echo '<tr><td><strong>'.$result['bot_name'].'</strong></td><td>'.$result['bot_mark'].'</td><td>'. $result['bot_visits'].
-	'</td><td>'. (!empty($result['bot_last_visit'])? $result['bot_last_visit'] : '-').'</td>
+	echo '<tr><td class="a"><strong>'.$result['bot_name'].'</strong></td><td>'.$result['bot_mark'].'</td><td class="c">'. $result['bot_visits'].
+	'</td><td>'. (!empty($result['bot_last_visit'])? $result['bot_last_visit'] : '').'</td>
 	<td>'.(!empty($result['ip_address'])? '<a href="javascript:void(0)" 
-	onclick="get_geoinfo(\''.$result['ip_address'].'\', \'toggle'.$result['id'].'\', \'content'.$result['id'].'\');">'.$result['ip_address'].'</a>' : '-').'</td>
-	<td><a href="?page='.$_GET['page'].'&amp;bot=delete&amp;bot-id='.(int)$result['id'].'&amp;_wpnonce='. wp_create_nonce( 'geo-nonce' ).'" >'. __("Delete","bodi0-bot-counter") .'</a></td></tr>';
-	echo '<div onclick="$(this).hide()" class="geo-info" style="display:none" id="toggle'.$result['id'].'"><div class="inner" id="content'.$result['id'].'"></div><div class="alignright" style="position:absolute;right:10px;top:10px;">x</div></div>';
+	onclick="get_geoinfo(\''.$result['ip_address'].'\', \'toggle'.$result['id'].'\', \'content'.$result['id'].'\');">'.$result['ip_address'].'</a>' : '').'</td>
+	<td><a href="?page='.$_GET['page'].'&amp;bot=delete&amp;bot-id='.(int)$result['id'].'&amp;_wpnonce='. wp_create_nonce( 'geo-nonce' ).'" >'. __("Delete","bodi0-bot-counter") .'</a></td>';
+	echo '<td style="height:20px !important"><div onclick="$(this).hide()" class="geo-info" style="display:none" id="toggle'.$result['id'].'"><div class="inner" id="content'.$result['id'].'"></div><div class="alignright" style="position:absolute;right:10px;top:10px;">x</div>
+	</div></td></tr>';
+//Increase counter
+$i++;
 }
 
 ?>
+</tbody>
+<tfoot>
+<tr><th colspan="7"><strong><?php _e("TOTAL"); ?></strong>: <strong><?php echo $i?></strong></th></tr>
+</tfoot>
 </table>
 <br/>
 <a href="javascript:void(0)" onclick="jQuery('#add-bot').toggle(200)"><?php _e("Add new Bot","bodi0-bot-counter"); ?></a>
@@ -207,3 +258,4 @@ wp_nonce_field( 'geo-nonce' );
 </form>
 
 </div>
+

@@ -1,10 +1,10 @@
 === bodi0`s Bots visits counter ===
 Contributors:
 Donate link:
-Tags: website, visits, counter
+Tags: website, visits, counter, bot, crawler, spider, statistics
 Requires at least: 3.1.0
 Tested up to: 3.8
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ None
 None
 
 == Changelog ==
+
+= 0.3 =
+Added on-page sort of the table with results.
 
 = 0.2 =
 Added internationalization support. For now Bulgarian and English only.

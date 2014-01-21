@@ -3,8 +3,9 @@ defined( 'ABSPATH' ) or exit;
 /*
 Plugin Name: bodi0`s Bots visits counter
 Plugin URI: 
-Description: Count web spiders, crawlers and bots visits of your blog. Also can count any other visit, the plug-in is looking for patterns in user-agent string, which can be customized.
-Version: 0.2
+Description: Count the visits from web spiders, crawlers and bots in your blog. 
+Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
+Version: 0.3
 Text Domain: bodi0-bot-counter
 Domain Path: /languages
 Author: bodi0
@@ -101,27 +102,28 @@ function bot_install() {
 	if(!empty($result_delta) && empty($result_empty['id'])) {
 	//Populate table newly created table only if empty
 	$wpdb->query("INSERT INTO ".__TABLE__ ." (bot_name, bot_mark) VALUES 
-	('Google Bot', 'googlebot'),
-	('Yahoo Slurp', 'yahoo'),
-	('MSN Bot', 'MSNBot'),
-	('Mail.RU_Bot', 'Mail.RU_Bot'),
+	('80legs', '80legs'),
+	('AddThis.com', 'AddThis.com'),
 	('Baiduspider', 'Baiduspider'),
 	('Bing', 'bingbot'),
-	('Ezooms', 'Ezooms'),
-	('Yandex Bot', 'YandexBot'),
-	('AddThis.com', 'AddThis.com'),
-	('MJ12bot', 'MJ12bot'),
-	('Proximic', 'proximic'),
-	('GrapeshotCrawler', 'GrapeshotCrawler'),
-	('SeznamBot', 'SeznamBot'),
-	('Netseer', 'Netseer'),
-	('spbot', 'spbot'),
-	('Exabot', 'Exabot'),
 	('bitlybot', 'bitlybot'),
-	('80legs', '80legs'),
 	('CatchBot', 'CatchBot'),
+	('Exabot', 'Exabot'),
+	('Ezooms', 'Ezooms'),
+	('facebookplatform', 'facebookplatform'),
+	('Google Bot', 'googlebot'),
+	('GrapeshotCrawler', 'GrapeshotCrawler'),
+	('Mail.RU_Bot', 'Mail.RU_Bot'),
+	('MJ12bot', 'MJ12bot'),
+	('MSN Bot', 'MSNBot'),
+	('Netseer', 'Netseer'),
+	('Proximic', 'proximic'),
 	('Qualidator', 'Qualidator'),
-	('facebookplatform', 'facebookplatform')");
+	('SeznamBot', 'SeznamBot'),
+	('spbot', 'spbot'),
+	('Yahoo Slurp', 'yahoo'),
+	('Yandex Bot', 'YandexBot')
+	");
 	}
 
  if(!empty($wpdb->last_error)) wp_die($wpdb->print_error());
@@ -170,7 +172,9 @@ function bot() {
 
 //Admin panel functions
 function bot_menu () {
-	global $wpdb;
+	//global $wpdb;
+	// Important: Check if current user is logged
+	if ( !is_user_logged_in( ) )  die();
 	include_once ("bodi0-bot-admin.php");
 }
 
@@ -197,12 +201,12 @@ function plugin_add_settings_link( $links ) {
 //_trigger_error('Some error message', E_USER_ERROR);
  
 function _trigger_error($message, $errno) {
- 
-  if(isset($_GET['action']) && $_GET['action'] == 'error_scrape') {
-         echo '<strong>' . $message . '</strong>';
-         exit;
-  } else {
-         trigger_error($message, $errno);
+	if(isset($_GET['action']) && $_GET['action'] == 'error_scrape') {
+		echo '<strong>' . $message . '</strong>';
+		exit;
+	} else {
+		trigger_error($message, $errno);
+	}
 }
-}
+
 ?>
