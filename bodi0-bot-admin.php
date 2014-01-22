@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or exit;
 Plugin`s Administration panel
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.3
+Version: 0.4
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -26,6 +26,7 @@ License: GPL2
 // Important: Check if current user is logged
 if ( !is_user_logged_in( ) )  die();
 
+
 //Security check
 $nonce = isset($_REQUEST['_wpnonce']) ? $_REQUEST['_wpnonce'] : '';
 
@@ -34,8 +35,9 @@ global $wpdb;
 //SQL table name
 if (!defined('__TABLE__')) define ('__TABLE__', $wpdb->prefix.'bot_counter'); 
 
+/*****************************************************************************************************************************/
 //Reset statistics
-if (isset($_GET['bot-counter']) && $_GET['bot-counter'] == 'reset' && ( wp_verify_nonce( $nonce, 'geo-nonce' )) ) {
+if (isset($_GET['bot-counter']) && $_GET['bot-counter'] == 'reset' && ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
 	$wpdb->query ( $wpdb->prepare('UPDATE '.__TABLE__ .' SET bot_visits = %d, bot_last_visit = NULL ', 0) );
 
 //Error handling
@@ -47,9 +49,10 @@ if (isset($_GET['bot-counter']) && $_GET['bot-counter'] == 'reset' && ( wp_verif
 	}
 }	 
 
+/***************************************************************************************************************************/
 //Add new bot
 if (isset($_POST['bot-name']) && isset($_POST['bot-mark']) && trim($_POST['bot-name']) !='' && trim($_POST['bot-mark']) !='' 
-&& ( wp_verify_nonce( $nonce, 'geo-nonce' )) ) {
+&& ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
 	$wpdb->query( $wpdb->prepare("INSERT INTO ".__TABLE__ ." (bot_name, bot_mark, bot_visits, bot_last_visit) 
 	VALUES (%s, %s, 0, NULL )", sanitize_text_field($_POST['bot-name']), sanitize_text_field($_POST['bot-mark'])));
 
@@ -57,21 +60,38 @@ if (isset($_POST['bot-name']) && isset($_POST['bot-mark']) && trim($_POST['bot-n
 	if (!empty($wpdb->last_error)) { 	$wpdb->print_error(); }
 	else {?> 
 	<div id="message" class="updated">
-	<p><?php _e("New Bot", "bodi0-bot-counter"); ?> <strong><?php _e("added", "bodi0-bot-counter"); ?></strong>.</p></div>
+	<p><?php _e("New bot", "bodi0-bot-counter"); ?> <strong><?php _e("added", "bodi0-bot-counter"); ?></strong>.</p></div>
 	
 <?php 
 	}
 }	 
 
+/****************************************************************************************************************************/
+//Update a bot
+if (isset($_POST['bot-name']) && isset($_POST['bot-id']) && trim($_POST['bot-name']) !='' && !empty($_POST['bot-id']) 
+&& ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
+	$wpdb->query( $wpdb->prepare("UPDATE ".__TABLE__ ." SET bot_name = %s	WHERE id = %d ", sanitize_text_field($_POST['bot-name']), sanitize_text_field($_POST['bot-id'])));
+
+//Error handling
+	if (!empty($wpdb->last_error)) { 	$wpdb->print_error(); }
+	else {?> 
+	<div id="message" class="updated">
+	<p><?php _e("The bot`s name", "bodi0-bot-counter"); ?> <strong><?php _e("was updated", "bodi0-bot-counter"); ?></strong>.</p></div>
+	
+<?php 
+	}
+}	 
+
+/*****************************************************************************************************************************/
 //Delete bot
-if (isset($_GET['bot']) && $_GET['bot']=='delete' && !empty($_GET['bot-id']) && ( wp_verify_nonce( $nonce, 'geo-nonce' )) ) {
+if (isset($_GET['bot']) && $_GET['bot']=='delete' && !empty($_GET['bot-id']) && ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
 	$wpdb->query( $wpdb->prepare("DELETE FROM ".__TABLE__ . " WHERE id = %d", $_GET['bot-id']) );
 	
 	//Error handling
 	if (!empty($wpdb->last_error)) { 	$wpdb->print_error(); }
 	else {?> 
 	<div id="message" class="updated">
-	<p><?php _e("The Bot was deleted", "bodi0-bot-counter"); ?>.</p></div>
+	<p><?php _e("The Bot", "bodi0-bot-counter"); ?> <strong><?php _e("was deleted", "bodi0-bot-counter"); ?></strong>.</p></div>
 	
 <?php 
 	} 
@@ -101,18 +121,18 @@ a {text-decoration:none !important}
 	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
 	border-bottom: #000 2px solid;
 }
-.tablesorter-default thead .sorter-false {
-	background-image: none;
-	cursor: default;
-}
+.tablesorter-default thead .sorter-false {	background-image: none;	cursor: default;}
+div.wrap div.edit{background-color: #FFFFFF;left: 0px;margin-top: 0px;padding-top: 0px;position: absolute;top: auto;min-width: 690px !important;width: 707px !important;padding-bottom: 0px;padding-left: 10px;margin-left: 4px;margin-bottom: 0px;height: 4em;}
+div.wrap div.edit form{margin-top:0.8em;}
 </style>
 
 <div class="wrap">
-<h2><?php _e("Bot visits counter [Admin]","bodi0-bot-counter"); ?></h2>
-<p><a href="?page=<?php echo $_GET['page']; ?>&amp;bot-counter=reset"><?php _e("Reset Stats", "bodi0-bot-counter"); ?></a></p>
+<h2><?php _e("Bot visits counter [Administration]","bodi0-bot-counter"); ?></h2>
+<p class="submitbox"><a href="?page=<?php echo $_GET['page']; ?>&amp;bot-counter=reset" class="submitdelete"><?php _e("Reset Statistics", "bodi0-bot-counter"); ?></a></p>
 <p><?php _e("The list, by default, is ordered by number of visits, click on arrow to re-order","bodi0-bot-counter"); ?>. </p>
-<p class="alignright"><a href="?page=bodi0-bot-counter" class="alignleft"><?php _e("Refresh statistics", "bodi0-bot-counter"); ?></a>
-</p>
+<p class="alignright"> <a href="?page=bodi0-bot-counter" class="alignleft"><?php _e("Refresh statistics", "bodi0-bot-counter"); ?></a>
+&nbsp; </p>
+<p class="alignright"> <a href="?page=bodi0-bot-counter&amp;bot-download=stats&amp;_wpnonce=<?php echo wp_create_nonce( 'bot-nonce' ) ?>" class="alignleft"><?php _e("Export as XML Spreadsheet","bodi0-bot-counter"); ?></a> &nbsp;|&nbsp;</p>
 <?php
 //Get all results of visits
 $results = $wpdb->get_results('SELECT * FROM '.__TABLE__.' ORDER BY bot_visits DESC', ARRAY_A);
@@ -128,7 +148,7 @@ var request = $.ajax({
   type: "GET",
 	global: false,
 	cache: false,
-	data: { action: 'get_location_info', ip: ip_address, _wpnonce: '<?php echo wp_create_nonce( 'geo-nonce' ) ?>'
+	data: { action: 'get_location_info', ip: ip_address, _wpnonce: '<?php echo wp_create_nonce( 'bot-nonce' ) ?>'
  },
   dataType: "html",
 	async:true
@@ -152,19 +172,9 @@ function( jqXHR, textStatus, ev ) {
 /*Sort the table*/
 $(document).ready(function(){
   $("#bot-table").tablesorter();
-	$('#bot-table thead th a').on('click',function(e){
-		if($(this).html=='<strong>&uarr;</strong>') ($(this).html('<strong>&darr;</strong>'));
-		else $(this).html('<strong>&uarr;</strong>');
-		e.preventDefault();
-		});
-
-
 });
 
 </script>
-
-
-
 <script type="text/javascript">
 /*Courtesy of http://www.vonloesch.de/node/23 */
 function filter (term, _id, cellNr) {
@@ -175,6 +185,7 @@ function filter (term, _id, cellNr) {
 	
 	for (var r = 1; r < table.rows.length; r++) {
 		ele = table.rows[r].cells[cellNr].innerHTML.replace(/<[^>]+>/g,"");
+		
 		if (ele.toLowerCase().indexOf(suche)>=0 ) {
 			table.rows[r].style.display = '';
 			}
@@ -182,45 +193,63 @@ function filter (term, _id, cellNr) {
 	}
 }
 </script>
+
 <table style="width: 50% !important" class="allignleft">
-<tr><td><?php _e("Filter list", "bodi0-bot-counter"); ?>: 
-<input name="filter" id="filter" onkeyup="filter(this, 'bot-table', 1)" type="text" placeholder="Type here..." style="vertical-align:middle;width:200px"/> <a href="javascript:void(0)" onclick="document.getElementById('filter').value=''; filter(document.getElementById('filter'), 'bot-table', 1)">Reset</a>
+<tr><td><?php _e("Filter by name", "bodi0-bot-counter"); ?>: 
+<input name="filter" id="filter" onkeyup="filter(this, 'bot-table', 0)" type="text" placeholder="<?php _e("Type here...","bodi0-bot-counter"); ?>" style="vertical-align:middle;width:200px"/> <a href="javascript:void(0)" onclick="document.getElementById('filter').value=''; filter(document.getElementById('filter'), 'bot-table', 0)"><?php _e("Reset","bodi0-bot-counter"); ?></a>
 </td></tr>
 </table>
 <table class="widefat" style="min-width:690px !important; max-width:720px !important" id="bot-table">
 <thead>
 <tr>
-<th><?php _e("Bot name","bodi0-bot-counter"); ?> <a href="#" class="arrow"><strong>&harr;</strong></a> </th>
-<th><?php _e("Bot identifier","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
-<th><?php _e("Visits","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
-<th><?php _e("Last visit","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
-<th><?php _e("IP address","bodi0-bot-counter"); ?> <a href="#" class="arrow"></a></th>
-<th class="sorter-false"><?php _e("Action","bodi0-bot-counter"); ?></th>
+<th><?php _e("Bot name","bodi0-bot-counter"); ?>  </th>
+<th><?php _e("Bot identifier","bodi0-bot-counter"); ?> </th>
+<th><?php _e("Visits","bodi0-bot-counter"); ?> </th>
+<th><?php _e("Last visit","bodi0-bot-counter"); ?> </th>
+<th><?php _e("IP address","bodi0-bot-counter"); ?> </th>
 <th class="sorter-false"></th>
 </tr>
 </thead>
 <tbody>
 
 <?php
-//Counter
-$i = 0;
+//Counters
+$i = 0; $j = 0;
 //The cycle
 foreach($results as $result) {
-	echo '<tr><td class="a"><strong>'.$result['bot_name'].'</strong></td><td>'.$result['bot_mark'].'</td><td class="c">'. $result['bot_visits'].
+	//
+	echo '<tr class="search-me"><td><strong>'.$result['bot_name'].'</strong>
+	<div class="row-actions"><span class="inline hide-if-no-js"><a class="editinline" 
+	href="javascript:void(0)" onclick="$(\'#edit-'.$result['id'].'\').show();"
+	title="'. __("Edit this item","bodi0-bot-counter").'">'.__("Edit","bodi0-bot-counter").'</a> | </span><span class="trash"><a class="submitdelete" 
+	href="?page='.esc_html($_GET['page']).'&amp;bot=delete&amp;bot-id='.(int)$result['id'].'&amp;_wpnonce='. wp_create_nonce( 'bot-nonce' ).'" >'. __("Delete","bodi0-bot-counter") .'</a></span></div>
+	</td><td>'.$result['bot_mark'].'</td><td class="c">'. $result['bot_visits'].
 	'</td><td>'. (!empty($result['bot_last_visit'])? $result['bot_last_visit'] : '').'</td>
 	<td>'.(!empty($result['ip_address'])? '<a href="javascript:void(0)" 
-	onclick="get_geoinfo(\''.$result['ip_address'].'\', \'toggle'.$result['id'].'\', \'content'.$result['id'].'\');">'.$result['ip_address'].'</a>' : '').'</td>
-	<td><a href="?page='.$_GET['page'].'&amp;bot=delete&amp;bot-id='.(int)$result['id'].'&amp;_wpnonce='. wp_create_nonce( 'geo-nonce' ).'" >'. __("Delete","bodi0-bot-counter") .'</a></td>';
-	echo '<td style="height:20px !important"><div onclick="$(this).hide()" class="geo-info" style="display:none" id="toggle'.$result['id'].'"><div class="inner" id="content'.$result['id'].'"></div><div class="alignright" style="position:absolute;right:10px;top:10px;">x</div>
-	</div></td></tr>';
-//Increase counter
-$i++;
+	onclick="get_geoinfo(\''.$result['ip_address'].'\', \'toggle'.$result['id'].'\', \'content'.$result['id'].'\');">'.$result['ip_address'].'</a>' : '').'</td>';
+	echo '<td><div onclick="$(this).hide()" class="geo-info" style="display:none" id="toggle'.$result['id'].'"><div class="inner" id="content'.$result['id'].'"></div><div class="alignright" style="position:absolute;right:10px;top:10px;">x</div>
+	</div>
+	<div id="edit-'.$result['id'].'" style="display:none;" class="edit">';
+?>
+  <form method="post" name="editform" action="?page=<?php echo $_GET['page'] ?>">
+  <?php  wp_nonce_field( 'bot-nonce' );?>
+  <?php _e("New name","bodi0-bot-counter"); ?>: <input type="text" name="bot-name" id="bot-name" value="<?php echo $result['bot_name']?>" maxlength="20"/> (<?php _e("up to 20 characters","bodi0-bot-counter"); ?>)
+  <input type="hidden" name="bot-id" value="<?php echo $result['id']?>" />
+  <input type="submit" name="submit" class="button" value="<?php _e("Update","bodi0-bot-counter"); ?>"/>
+ &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#edit-<?php echo $result['id']?>').hide()" class="button-secondary cancel"><?php _e("Cancel","bodi0-bot-counter"); ?></a>
+  </form>
+	
+	
+<?php
+echo '</td></tr>'; //End edit 
+//Increase counters
+$i++; $j = $j + $result['bot_visits'];
 }
 
 ?>
 </tbody>
 <tfoot>
-<tr><th colspan="7"><strong><?php _e("TOTAL"); ?></strong>: <strong><?php echo $i?></strong></th></tr>
+<tr><th colspan="6"><strong><?php _e("TOTAL","bodi0-bot-counter"); ?></strong>: <strong><?php echo $i?></strong>, <strong><?php _e("VISITS"); ?></strong>: <strong><?php echo $j;?></strong></th></tr>
 </tfoot>
 </table>
 <br/>
@@ -230,7 +259,7 @@ $i++;
 <form method="post" name="form" action="?page=<?php echo $_GET['page'];?>">
 <?php 
 //Nonce field
-wp_nonce_field( 'geo-nonce' );
+wp_nonce_field( 'bot-nonce' );
 ?>
 <table style="width:100% !important; margin:0;padding:0">
   <tr>
@@ -246,7 +275,7 @@ wp_nonce_field( 'geo-nonce' );
 
 
 </form>
-<p>* <?php _e("Tip: You can also monitor misc web browser visits by defining appropriate user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"); ?>.</p>
+<p>* <?php _e("Tip: You can also monitor misc web browser visits by defining appropriate user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;","bodi0-bot-counter"); ?>.</p>
 </div>
 <p><?php _e("See the complete user agent string list of","bodi0-bot-counter"); ?> <a href="http://user-agent-string.info/list-of-ua/bots" target="_blank"><?php _e("bots","bodi0-bot-counter"); ?></a></p>
 <p><?php _e("Remark: Some of the returned data includes GeoLite data created by MaxMind, available from http://www.maxmind.com", "bodi0-bot-counter"); ?></p>

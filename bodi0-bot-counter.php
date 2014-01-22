@@ -5,7 +5,7 @@ Plugin Name: bodi0`s Bots visits counter
 Plugin URI: 
 Description: Count the visits from web spiders, crawlers and bots in your blog. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
-Version: 0.3
+Version: 0.4
 Text Domain: bodi0-bot-counter
 Domain Path: /languages
 Author: bodi0
@@ -29,12 +29,15 @@ License: GPL2
 		Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-global $wpdb;
+global $wpdb, $nonce;
 /*Plugin file name*/
 $plugin = plugin_basename( __FILE__ );
-
+/*Security check*/
+$nonce = isset($_REQUEST['_wpnonce']) ? $_REQUEST['_wpnonce'] : '';
 /*Actions*/
 add_action('init', 'plugin_internationalization');
+/*Export statistics*/
+add_action('admin_init', 'call_bot_export');
 /*Admin menu page*/
 add_action("admin_menu", "bot_admin_actions");
 /*Attach bot function to footer*/
@@ -53,6 +56,7 @@ register_activation_hook(__FILE__, 'bot_install');
 
 /*SQL table name*/
 if(!defined('__TABLE__')) define ('__TABLE__', $wpdb->prefix."bodi0_bot_counter");
+
 
 
 // Install plugin
@@ -172,7 +176,6 @@ function bot() {
 
 //Admin panel functions
 function bot_menu () {
-	//global $wpdb;
 	// Important: Check if current user is logged
 	if ( !is_user_logged_in( ) )  die();
 	include_once ("bodi0-bot-admin.php");
@@ -180,8 +183,7 @@ function bot_menu () {
 
 //Register admin menu
 function bot_admin_actions() {
-	global $my_plugin_hook;
- 	$my_plugin_hook = add_options_page(__("Bot visits counter","bodi0-bot-counter"), __("Bot visits counter","bodi0-bot-counter"), "manage_options" , "bodi0-bot-counter", "bot_menu");	
+		add_options_page(__("Bot visits counter","bodi0-bot-counter"), __("Bot visits counter","bodi0-bot-counter"), "manage_options" , "bodi0-bot-counter", "bot_menu");	
 }
 
 //Translations
@@ -192,7 +194,7 @@ function plugin_internationalization() {
 //Settings link
 function plugin_add_settings_link( $links ) {
     
-		$settings_link = '<a href="options-general.php?page='.basename( __FILE__ ).'">'.__('Settings').'</a>';
+		$settings_link = '<a href="options-general.php?page='.basename( __FILE__ ).'">'.__("Administration","bodi0-bot-counter").'</a>';
   	array_push( $links, $settings_link );
   	return $links;
 }
@@ -208,5 +210,52 @@ function _trigger_error($message, $errno) {
 		trigger_error($message, $errno);
 	}
 }
+/***************************************************************************************************************************/
+//Export statistics as Excel file
+function call_bot_export() {
+	global $wbdb, $nonce;
+	if (isset($_GET['bot-download']) && trim($_GET['bot-download']) =='stats' && ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
+		//If everything is set - export data
+		bot_export();
+	}
+} 
+function bot_export() {
+	global $wpdb, $nonce;
 
+	require_once("class.excel.php");
+	$query = 'SELECT * FROM '.__TABLE__.' ORDER BY bot_visits DESC';
+	$arr = $wpdb->get_results($query, ARRAY_A);
+	$field_names = array('Bot name', 'Bot identifier', 'Visits', 'Last visit', 'IP address');
+	//Columns count
+	$fields_num = count($field_names);
+	//Result count
+	$count = count($arr);
+	$today = 	date("Y-m-d H:i:s");
+	$filename = "bot-statistics.xls";
+	//Make instance of the class
+	$exporter = new ExportDataExcel('browser', $filename);
+	//Starts streaming data to web browser
+	$exporter->initialize();
+
+	//Put current generated date
+	$exporter->addRow(array('Generated on: '.$today)); 
+
+	//Create sheet column titles from database column names
+	$exporter->addRow($field_names);
+	
+	//Get the rest of the data from database
+	for ($m=0; $m<$count; $m++) {
+		//Pass addRow() an array and it converts it to Excel XML format and sends  it to the browser
+		$exporter->addRow(array($arr[$m]['bot_name'],$arr[$m]['bot_mark'],$arr[$m]['bot_visits'],
+		$arr[$m]['bot_last_visit'],$arr[$m]['ip_address'] ));
+	}
+
+	$exporter->finalize(); //Writes the footer, flushes remaining data to browser.
+	exit(); //All done
+
+//Error handling
+	if (!empty($wpdb->last_error)) { 	$wpdb->print_error(); }
+	}	
+
+/****************************************************************************************************************************/
 ?>

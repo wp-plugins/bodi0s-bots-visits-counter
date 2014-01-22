@@ -4,7 +4,7 @@ Donate link:
 Tags: website, visits, counter, bot, crawler, spider, statistics
 Requires at least: 3.1.0
 Tested up to: 3.8
-Stable tag: 0.3
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,9 +27,14 @@ None
 None
 
 == Changelog ==
+= 0.4 =
+Added in-line edit/update of bot's name.
+Added ability to export statistics as XML Spreadsheet file, can be opened by MS Excel.
+Added French translation.
+Bugfixes and small improvements in filtering and sorting of the results.
 
 = 0.3 =
-Added on-page sort of the table with results.
+Added on-page sort of the table with results (TableSorter 2.14.4 by Christian Bach).
 
 = 0.2 =
 Added internationalization support. For now Bulgarian and English only.
