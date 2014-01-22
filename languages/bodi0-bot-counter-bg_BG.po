@@ -1,0 +1,220 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bodi0 bot visits counter\n"
+"POT-Creation-Date: 2014-01-22 13:39+0200\n"
+"PO-Revision-Date: 2014-01-22 13:39+0200\n"
+"Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
+"Language-Team: \n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../bodi0-bot-admin.php:47
+msgid "Bot visits Stats"
+msgstr "Статистика на посещенията"
+
+#: ../bodi0-bot-admin.php:47
+msgid " were reset"
+msgstr "беше нулирана"
+
+#: ../bodi0-bot-admin.php:63
+msgid "New bot"
+msgstr "Новото име на бот"
+
+#: ../bodi0-bot-admin.php:63
+msgid "added"
+msgstr "беше добавен"
+
+#: ../bodi0-bot-admin.php:79
+msgid "The bot`s name"
+msgstr "Името на бота "
+
+#: ../bodi0-bot-admin.php:79
+msgid "was updated"
+msgstr "беше обновено"
+
+#: ../bodi0-bot-admin.php:94
+msgid "The Bot"
+msgstr "Ботът"
+
+#: ../bodi0-bot-admin.php:94
+msgid "was deleted"
+msgstr "беше изтрит"
+
+#: ../bodi0-bot-admin.php:130
+msgid "Bot visits counter [Administration]"
+msgstr "Брояч на посещенията от ботове [Администрация]"
+
+#: ../bodi0-bot-admin.php:131
+msgid "Reset Statistics"
+msgstr "Нулиране на цялата статистика"
+
+#: ../bodi0-bot-admin.php:132
+msgid ""
+"The list, by default, is ordered by number of visits, click on arrow to re-"
+"order"
+msgstr ""
+"Списъкът, по подразбиране, е подреден по брой посещения, кликнете на "
+"стрелката за пренареждане"
+
+#: ../bodi0-bot-admin.php:133
+msgid "Refresh statistics"
+msgstr "Презареждане"
+
+#: ../bodi0-bot-admin.php:135
+msgid "Export as XML Spreadsheet"
+msgstr "Експорт като XML Spreadsheet"
+
+#: ../bodi0-bot-admin.php:198
+msgid "Filter by name"
+msgstr "Филтър по име"
+
+#: ../bodi0-bot-admin.php:199
+msgid "Type here..."
+msgstr "Пишете тук..."
+
+#: ../bodi0-bot-admin.php:199
+msgid "Reset"
+msgstr "Нулиране"
+
+#: ../bodi0-bot-admin.php:205 ../bodi0-bot-admin.php:266
+msgid "Bot name"
+msgstr "Име на бота"
+
+#: ../bodi0-bot-admin.php:206 ../bodi0-bot-admin.php:269
+msgid "Bot identifier"
+msgstr "Идентификатор"
+
+#: ../bodi0-bot-admin.php:207
+msgid "Visits"
+msgstr "Посещения"
+
+#: ../bodi0-bot-admin.php:208
+msgid "Last visit"
+msgstr "Последно посещение"
+
+#: ../bodi0-bot-admin.php:209
+msgid "IP address"
+msgstr "IP адрес"
+
+#: ../bodi0-bot-admin.php:224
+msgid "Edit this item"
+msgstr "Редактиране на този запис"
+
+#: ../bodi0-bot-admin.php:224
+msgid "Edit"
+msgstr "Реадкция"
+
+#: ../bodi0-bot-admin.php:225
+msgid "Delete"
+msgstr "Изтриване"
+
+#: ../bodi0-bot-admin.php:236
+msgid "New name"
+msgstr "Ново име"
+
+#: ../bodi0-bot-admin.php:236
+msgid "up to 20 characters"
+msgstr "до 20 символа"
+
+#: ../bodi0-bot-admin.php:238
+msgid "Update"
+msgstr "Обнови"
+
+#: ../bodi0-bot-admin.php:239
+msgid "Cancel"
+msgstr "Отмяна"
+
+#: ../bodi0-bot-admin.php:252
+msgid "TOTAL"
+msgstr "ОБЩО"
+
+#: ../bodi0-bot-admin.php:252
+msgid "VISITS"
+msgstr "ПОСЕЩЕНИЯ"
+
+#: ../bodi0-bot-admin.php:256 ../bodi0-bot-admin.php:271
+msgid "Add new Bot"
+msgstr "Добави бот"
+
+#: ../bodi0-bot-admin.php:266
+msgid "up to 20 characters, required"
+msgstr "до 20 символа, задължително"
+
+#: ../bodi0-bot-admin.php:269
+msgid "up to 100 characters, required"
+msgstr "до 100 символа, задължително"
+
+#: ../bodi0-bot-admin.php:278
+msgid ""
+"Tip: You can also monitor misc web browser visits by defining appropriate "
+"user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
+msgstr ""
+"Съвет: Можете да следите и произволен уеб браузър като зададете подходящите "
+"стойности, например &quot;Firefox&quot; или &quot;Chrome&quot;"
+
+#: ../bodi0-bot-admin.php:280
+msgid "See the complete user agent string list of"
+msgstr "Вижте пълния списък от user agent символи на "
+
+#: ../bodi0-bot-admin.php:280
+msgid "bots"
+msgstr "ботовете"
+
+#: ../bodi0-bot-admin.php:281
+msgid ""
+"Remark: Some of the returned data includes GeoLite data created by MaxMind, "
+"available from http://www.maxmind.com"
+msgstr ""
+"Забележка: Някои от данните за локация включват GeoLite данни, създадени от "
+"MaxMind, от сайта http://www.maxmind.com"
+
+#: ../bodi0-bot-admin.php:282
+msgid "If you find this plugin useful, I wont mind if you buy me a beer"
+msgstr ""
+"Ако смятате, че този плъгин е полезен, нямам против да ме черпите с бира"
+
+#: ../bodi0-bot-ajax.php:44
+msgid "Invalid AJAX action."
+msgstr "Невалидно AJAX действие"
+
+#: ../bodi0-bot-ajax.php:57
+msgid "Location info"
+msgstr "Локация"
+
+#: ../bodi0-bot-ajax.php:66
+msgid "Invalid IP address: "
+msgstr "Невалиден IP адрес: "
+
+#: ../bodi0-bot-counter.php:186
+msgid "Bot visits counter"
+msgstr "Брояч на посещенията на ботове"
+
+#: ../bodi0-bot-counter.php:197
+msgid "Administration"
+msgstr "Администрация"
+
+#~ msgid "Filter list"
+#~ msgstr "Филтър"
+
+#~ msgid "Action"
+#~ msgstr "Действие"
+
+#~ msgid "Settings"
+#~ msgstr "Настройки"
+
+#~ msgid "You are not logged into Wordpress system."
+#~ msgstr "Не сте се логнали в системата."
+
+#~ msgid "Bot mark"
+#~ msgstr "Признак на бота"
+
+#~ msgid "Add Bot name"
+#~ msgstr "Добави бот"
