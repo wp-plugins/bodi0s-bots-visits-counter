@@ -28,7 +28,7 @@ None
 
 == Changelog ==
 = 0.4 =
-Added in-line edit/update of bot's name.
+Added in-line edit/delete of bot's name.
 Added ability to export statistics as XML Spreadsheet file, can be opened by MS Excel.
 Added French translation.
 Bugfixes and small improvements in filtering and sorting of the results.
