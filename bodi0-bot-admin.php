@@ -389,7 +389,7 @@ if (isset($_GET['bot']) && $_GET['bot']=='delete' && !empty($_GET['bot-id']) && 
 }
 ?>
 <style type="text/css">
-.geo-info {position: fixed; background: #fff; border:1px solid #ccc;left:75%;width:20%; cursor:pointer;z-index:10000;box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.196) !important}
+.geo-info {position: absolute; background: #fff; border:1px solid #ccc;left:75%;width:20%; cursor:pointer;z-index:10000;box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.196) !important}
 .geo-info .inner {margin:1em}
 a {text-decoration:none !important}
 .tablesorter-default .header,
