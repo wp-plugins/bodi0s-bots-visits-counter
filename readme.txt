@@ -3,16 +3,17 @@ Contributors:
 Donate link:
 Tags: website, visits, counter, bot, crawler, spider, statistics
 Requires at least: 3.1.0
-Tested up to: 3.8
+Tested up to: 3.8.1
 Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Count the visits from web spiders, crawlers and bots in your blog. 
+Counts the visits from web spiders, crawlers and bots in your blog. 
 
 == Description ==
-Count the visits from web spiders, crawlers and bots in your blog. 
+Counts the visits from web spiders, crawlers and bots in your blog. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
+You can block or unblock crawler, spider (or any other item), by IP address and identifier via .htaccess file.
 
 == Installation ==
 This section describes how to install the plugin and get it working.
