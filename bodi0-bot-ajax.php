@@ -3,7 +3,7 @@
 Plugin`s AJAX function calls
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.2
+Version: 0.5
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bodi0 bot visits counter\n"
-"POT-Creation-Date: 2014-01-22 13:39+0200\n"
-"PO-Revision-Date: 2014-01-22 13:40+0200\n"
+"POT-Creation-Date: 2014-01-24 13:16+0200\n"
+"PO-Revision-Date: 2014-01-24 13:17+0200\n"
 "Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,143 +16,283 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../bodi0-bot-admin.php:47
+#: ../bodi0-bot-admin.php:159
+msgid "Invalid action type while attempting to update the file "
+msgstr ""
+"Type d'action non valide lors de la tentative de mettre à jour le fichier "
+
+#: ../bodi0-bot-admin.php:168
+msgid " was updated."
+msgstr " a été mis à jour."
+
+#: ../bodi0-bot-admin.php:170
+msgid ""
+"However it is good idea to manually check if everything is correct and the "
+"file is placed in the root folder of your web server. If you experience 500 "
+"Internal Server Error condition, then remove the following lines from "
+msgstr ""
+"Toutefois, il est bon de vérifier manuellement si tout est correct et le "
+"fichier est placé dans le dossier racine de votre serveur web. Si vous "
+"rencontrez des 500 Internal Server Error conditions, puis supprimez les "
+"lignes suivantes de"
+
+#: ../bodi0-bot-admin.php:181
+msgid "The blocking rules for this bot were not found in file "
+msgstr "Les règles de blocage pour cet bot sont introuvables dans le fichier"
+
+#: ../bodi0-bot-admin.php:182
+msgid ""
+"Did you removed from the file the below comments and content in-between "
+"(which were created by the plugin)?"
+msgstr ""
+"Avez-vous supprimé à partir du fichier des commentaires ci-dessous et de "
+"contenu entre-deux (qui ont été créés par le plug-in)?"
+
+#: ../bodi0-bot-admin.php:190
+msgid "The blocking rules for this bot were removed from file "
+msgstr "Les règles de blocage pour cet bot ont été retirés du fichier"
+
+#: ../bodi0-bot-admin.php:198
+msgid "The blocking rules for this bot already exists in file "
+msgstr "Les règles de blocage pour cet bot existe déjà dans le fichier"
+
+#: ../bodi0-bot-admin.php:200
+msgid "No modification is necessary."
+msgstr "Aucune modification n'est nécessaire."
+
+#: ../bodi0-bot-admin.php:208 ../bodi0-bot-admin.php:265
+msgid "Unable to write the new content to the file "
+msgstr "Impossible d'écrire le nouveau contenu dans le fichier"
+
+#: ../bodi0-bot-admin.php:217
+msgid "Please update this file manually by placing inside the following code: "
+msgstr ""
+"S'il vous plaît mettre à jour cet fichier manuellement et plaçant à "
+"l'intérieur du code ci-dessous:"
+
+#: ../bodi0-bot-admin.php:228
+msgid ""
+"In this case the system cannot modify it and you should remove the rules "
+"manually, for this bot everything in-between comments: "
+msgstr ""
+"Dans ce cas, le système ne peut pas le modifier et vous devez supprimer les "
+"règles manuellement, pour cet bot tout entre les deux commentaires: "
+
+#: ../bodi0-bot-admin.php:233
+msgid "Wordpress do not have permissions to read/write the file "
+msgstr "Wordpress n'avez pas la permission de lire / écrire le fichier "
+
+#: ../bodi0-bot-admin.php:257
+msgid " was created."
+msgstr " a été créé."
+
+#: ../bodi0-bot-admin.php:259
+msgid ""
+"The configuration file does not existed and was created by the plugin. It is "
+"good idea to manually check if everything is correct and the file is placed "
+"in the root folder of your web server. If you experience 500 Internal Server "
+"Error condition, then remove the following lines from "
+msgstr ""
+"Le fichier de configuration n'a pas existé et a été créé par le plugin. "
+"C'est une bonne idée de vérifier manuellement si tout est correct et le "
+"fichier est placé dans le dossier racine de votre serveur web. Si vous "
+"rencontrez des 500 Internal Server Error conditions, puis supprimez les "
+"lignes suivantes de "
+
+#: ../bodi0-bot-admin.php:274
+msgid ""
+"Wordpress File System Error, insufficient permissions for accessing the file "
+msgstr ""
+"Wordpress erreur de File System, pas d'autorisations suffisantes pour "
+"accéder au fichier "
+
+#: ../bodi0-bot-admin.php:283
+msgid ""
+"Modifying the web.config file on IIS is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+msgstr ""
+"Modification du fichier web.config sur IIS n'est pas pris en charge. "
+"Cependant, vous pouvez modifier manuellement le contenu du fichier par écrit "
+"les directives correctes."
+
+#: ../bodi0-bot-admin.php:292
+msgid ""
+"Modifying the config file of nginx server is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+msgstr ""
+"Modification du fichier de configuration de serveur nginx est pas pris en "
+"charge. Cependant, vous pouvez modifier manuellement le contenu du fichier "
+"par écrit les directives correctes."
+
+#: ../bodi0-bot-admin.php:301
+msgid ""
+"Modifying the config file of this web server is not supported. However you "
+"can manually change the file contents by writing the correct directives."
+msgstr ""
+"Modification du fichier de configuration de ce serveur Web n'est pas "
+"supporté. Cependant, vous pouvez modifier manuellement le contenu du fichier "
+"par écrit les directives correctes."
+
+#: ../bodi0-bot-admin.php:322
 msgid "Bot visits Stats"
 msgstr "Les visites de Robots"
 
-#: ../bodi0-bot-admin.php:47
+#: ../bodi0-bot-admin.php:324
 msgid " were reset"
 msgstr " ont été ramenés"
 
-#: ../bodi0-bot-admin.php:63
+#: ../bodi0-bot-admin.php:343
 msgid "New bot"
 msgstr "Nouveau robot"
 
-#: ../bodi0-bot-admin.php:63
+#: ../bodi0-bot-admin.php:345
 msgid "added"
 msgstr "ajoutée"
 
-#: ../bodi0-bot-admin.php:79
+#: ../bodi0-bot-admin.php:363
 msgid "The bot`s name"
 msgstr "Le nom du robot"
 
-#: ../bodi0-bot-admin.php:79
+#: ../bodi0-bot-admin.php:365
 msgid "was updated"
 msgstr "a été mis à jour"
 
-#: ../bodi0-bot-admin.php:94
+#: ../bodi0-bot-admin.php:382
 msgid "The Bot"
 msgstr "Le robot"
 
-#: ../bodi0-bot-admin.php:94
+#: ../bodi0-bot-admin.php:384
 msgid "was deleted"
 msgstr "a été supprimé"
 
-#: ../bodi0-bot-admin.php:130
+#: ../bodi0-bot-admin.php:456
 msgid "Bot visits counter [Administration]"
 msgstr "Les visites des robots [Administration]"
 
-#: ../bodi0-bot-admin.php:131
+#: ../bodi0-bot-admin.php:459
 msgid "Reset Statistics"
 msgstr "Réinitialiser les statistiques"
 
-#: ../bodi0-bot-admin.php:132
+#: ../bodi0-bot-admin.php:462
 msgid ""
-"The list, by default, is ordered by number of visits, click on arrow to re-"
-"order"
+"The list, by default, is ordered by number of visits, click on table header "
+"arrows to re-order"
 msgstr ""
-"La liste, par défaut, est ordonné par le nombre de visites, cliquez sur la "
-"flèche pour modifier l'ordre"
+"La liste, par défaut, est commandé par le nombre de visites, cliquez sur la "
+"table tête flèches pour changer l'ordre"
 
-#: ../bodi0-bot-admin.php:133
+#: ../bodi0-bot-admin.php:464
+msgid ""
+"If you plan to block/unblock bots, a backup of your old .htaccess file will "
+"be created in case something goes wrong, called <code>.htaccess.bot-counter-"
+"backup.txt</code> in the same folder as your original file."
+msgstr ""
+"Si vous envisagez de bloquer/débloquer les bots, une sauvegarde de votre "
+"fichier htaccess vieux. Sera créé en cas de pépin, appelé <code>. Htaccess."
+"bot-contre-backup.txt </code> dans le même dossier que votre fichier "
+"original."
+
+#: ../bodi0-bot-admin.php:466
 msgid "Refresh statistics"
 msgstr "Actualiser les statistiques"
 
-#: ../bodi0-bot-admin.php:135
+#: ../bodi0-bot-admin.php:469
 msgid "Export as XML Spreadsheet"
 msgstr "Exporter comme XML Spreadsheet"
 
-#: ../bodi0-bot-admin.php:198
-msgid "Filter by name"
-msgstr "Filtrer la liste"
+#: ../bodi0-bot-admin.php:537
+msgid "Filter (all)"
+msgstr "Filtre (tous)"
 
-#: ../bodi0-bot-admin.php:199
+#: ../bodi0-bot-admin.php:539
 msgid "Type here..."
 msgstr "Taper ici..."
 
-#: ../bodi0-bot-admin.php:199
+#: ../bodi0-bot-admin.php:541
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: ../bodi0-bot-admin.php:205 ../bodi0-bot-admin.php:266
+#: ../bodi0-bot-admin.php:548 ../bodi0-bot-admin.php:653
 msgid "Bot name"
 msgstr "Nom du robot"
 
-#: ../bodi0-bot-admin.php:206 ../bodi0-bot-admin.php:269
+#: ../bodi0-bot-admin.php:550 ../bodi0-bot-admin.php:663
 msgid "Bot identifier"
 msgstr "Identifiant de robot"
 
-#: ../bodi0-bot-admin.php:207
+#: ../bodi0-bot-admin.php:552
 msgid "Visits"
 msgstr "Visites"
 
-#: ../bodi0-bot-admin.php:208
+#: ../bodi0-bot-admin.php:554
 msgid "Last visit"
 msgstr "Dernière visite"
 
-#: ../bodi0-bot-admin.php:209
+#: ../bodi0-bot-admin.php:556
 msgid "IP address"
 msgstr "Adresse IP"
 
-#: ../bodi0-bot-admin.php:224
+#: ../bodi0-bot-admin.php:571
 msgid "Edit this item"
 msgstr "Modifier cet objet"
 
-#: ../bodi0-bot-admin.php:224
+#: ../bodi0-bot-admin.php:571
 msgid "Edit"
 msgstr "Modifier"
 
-#: ../bodi0-bot-admin.php:225
+#: ../bodi0-bot-admin.php:574
+msgid "Block/Unblock"
+msgstr "Bloquer / Débloquer"
+
+#: ../bodi0-bot-admin.php:576
 msgid "Delete"
 msgstr "Effacer"
 
-#: ../bodi0-bot-admin.php:236
+#: ../bodi0-bot-admin.php:587
 msgid "New name"
 msgstr "Un nouveau nom"
 
-#: ../bodi0-bot-admin.php:236
+#: ../bodi0-bot-admin.php:591
 msgid "up to 20 characters"
 msgstr "20 caractères maximum"
 
-#: ../bodi0-bot-admin.php:238
+#: ../bodi0-bot-admin.php:594
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: ../bodi0-bot-admin.php:239
+#: ../bodi0-bot-admin.php:596 ../bodi0-bot-admin.php:617
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../bodi0-bot-admin.php:252
+#: ../bodi0-bot-admin.php:605
+msgid "Block the IP address and Bot identifier"
+msgstr "Bloquer l'adresse IP et l'identifiant de Bot"
+
+#: ../bodi0-bot-admin.php:612
+msgid "Unblock the IP address and Bot identifier"
+msgstr "Debloquer l'adresse IP et l'identifiant de Bot"
+
+#: ../bodi0-bot-admin.php:633
 msgid "TOTAL"
 msgstr "TOTAL"
 
-#: ../bodi0-bot-admin.php:252
+#: ../bodi0-bot-admin.php:635
 msgid "VISITS"
 msgstr "VISITES"
 
-#: ../bodi0-bot-admin.php:256 ../bodi0-bot-admin.php:271
+#: ../bodi0-bot-admin.php:642 ../bodi0-bot-admin.php:673
 msgid "Add new Bot"
 msgstr "Ajouter un robot"
 
-#: ../bodi0-bot-admin.php:266
+#: ../bodi0-bot-admin.php:658
 msgid "up to 20 characters, required"
 msgstr "20 caractères maximum, nécessaire"
 
-#: ../bodi0-bot-admin.php:269
+#: ../bodi0-bot-admin.php:668
 msgid "up to 100 characters, required"
 msgstr "100 caractères maximum, nécessaire"
 
-#: ../bodi0-bot-admin.php:278
+#: ../bodi0-bot-admin.php:679
 msgid ""
 "Tip: You can also monitor misc web browser visits by defining appropriate "
 "user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
@@ -161,15 +301,15 @@ msgstr ""
 "définir chaîne user-agent approprié ici, par exemple &quot;Firefox&quot; ou "
 "&quot;Chrome&quot;"
 
-#: ../bodi0-bot-admin.php:280
+#: ../bodi0-bot-admin.php:683
 msgid "See the complete user agent string list of"
 msgstr "Consultez la liste de chaîne user-agent complète de"
 
-#: ../bodi0-bot-admin.php:280
+#: ../bodi0-bot-admin.php:685
 msgid "bots"
 msgstr "robots"
 
-#: ../bodi0-bot-admin.php:281
+#: ../bodi0-bot-admin.php:688
 msgid ""
 "Remark: Some of the returned data includes GeoLite data created by MaxMind, "
 "available from http://www.maxmind.com"
@@ -177,7 +317,7 @@ msgstr ""
 "Remarque: Certaines des données renvoyées comprend des données GeoLite "
 "créées par MaxMind, disponibles à partir de http://www.maxmind.com"
 
-#: ../bodi0-bot-admin.php:282
+#: ../bodi0-bot-admin.php:690
 msgid "If you find this plugin useful, I wont mind if you buy me a beer"
 msgstr ""
 "Si vous trouvez ce plugin utile, je ne me dérange pas si vous me achetez une "
@@ -203,7 +343,7 @@ msgstr "Les visites du robots"
 msgid "Administration"
 msgstr "Administration"
 
-#~ msgid "Filter list"
+#~ msgid "Filter by name"
 #~ msgstr "Filtrer la liste"
 
 #~ msgid "Action"
