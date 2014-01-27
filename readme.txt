@@ -32,7 +32,7 @@ None
 Added ability to get the blog rankings, from Google or Alexa.
 Small improvements, translation updated and bugfixes.
 
-=0.5 =
+= 0.5 =
 Updated filtering of the results. Now filter applies to any table column.
 Added option to block/unblock bot, by IP address and identifier via .htaccess file, the plugin creates a backup of your old .htaccess file in case something goes wrong, called .htaccess.bot-counter-backup.txt in the same folder as your original file.
 Removed unnecessary javascript files related to table results filtering.
