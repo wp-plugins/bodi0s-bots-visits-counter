@@ -5,7 +5,7 @@ Plugin Name: bodi0`s Bots visits counter
 Plugin URI: 
 Description: Count the visits from web spiders, crawlers and bots in your blog. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
-Version: 0.5
+Version: 0.6
 Text Domain: bodi0-bot-counter
 Domain Path: /languages
 Author: bodi0
@@ -230,10 +230,11 @@ function bot_export() {
 	$fields_num = count($field_names);
 	//Result count
 	$count = count($arr);
-	$today = 	date("Y-m-d H:i:s");
-	$filename = "bot-statistics-".$today.".xml"; 
+	$today = 	date("Y-m-d");
+	 
 	//Make instance of the class
 	$exporter = new ExportDataExcel('browser', $filename);
+	$exporter->filename = "bot-statistics-".$today;
 	//Starts streaming data to web browser
 	$exporter->initialize();
 

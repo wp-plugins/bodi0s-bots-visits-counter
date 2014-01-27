@@ -4,7 +4,7 @@ Donate link:
 Tags: website, visits, counter, bot, crawler, spider, statistics
 Requires at least: 3.1.0
 Tested up to: 3.8.1
-Stable tag: 0.5
+Stable tag: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,10 @@ None
 None
 
 == Changelog ==
+= 0.6 =
+Added ability to get the blog rankings, from Google or Alexa.
+Small improvements, translation updated and bugfixes.
+
 =0.5=
 Updated filtering of the results. Now filter applies to any table column.
 Added option to block/unblock bot, by IP address and identifier via .htaccess file, the plugin creates a backup of your old .htaccess file in case something goes wrong, called .htaccess.bot-counter-backup.txt in the same folder as your original file.

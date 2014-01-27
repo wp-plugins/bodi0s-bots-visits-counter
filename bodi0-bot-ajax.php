@@ -3,7 +3,7 @@
 Plugin`s AJAX function calls
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.5
+Version: 0.6
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -37,11 +37,31 @@ require_once ('../../../wp-includes/pomo/translations.php');
 require_once ('../../../wp-includes/plugin.php');
 
 //A bit of security
-if(in_array($action, array( 'get_location_info' ))) {
-	get_location_info();
-}
-else {  
+if(!in_array($action, array( 'get_location_info', 'get_pagerank_google', 'get_pagerank_alexa' ))) {
 	_e( 'Invalid AJAX action.' ); 
+	exit();
+}
+//The AJAX action is OK, let`s switch it
+else {  
+	switch ($action) {
+		case 'get_location_info' :
+		get_location_info();
+		break;
+		
+		case 'get_pagerank_google' :
+		$url = isset($_GET['url'])? $_GET['url'] : '';
+		get_pagerank_google($url);
+		break;
+		
+		
+		case 'get_pagerank_alexa' :
+		$url = isset($_GET['url'])? $_GET['url'] : '';
+		get_pagerank_alexa($url);
+		break;
+		
+		default : 
+		break;
+		}
  }
 
 // Get and display location information via AJAX
@@ -66,5 +86,34 @@ function get_location_info () {
 		_e ("Invalid IP address: ".(isset($_GET['ip']) ? $_GET['ip'] : '') );	
 	}
 }
+
+// Get Google`s page rank for given URL
+function get_pagerank_google($url) {
+	// Include the class
+	require(dirname(__FILE__)."/class.google-pagerank.php");
+	//If is valid URL
+	if (filter_var($url, FILTER_VALIDATE_URL )) {
+		// Display result
+		$google = new get_google_pagerank;
+		echo $google->pagerank($url);
+	}
+	else _e("Invalid URL", "bodi0-bot-counter");
+}
+
+// Get Google`s page rank for given URL
+function get_pagerank_alexa($url) {
+	// Include the class
+	require(dirname(__FILE__)."/class.alexa-pagerank.php");
+	//If is valid URL
+	if (filter_var($url, FILTER_VALIDATE_URL )) {
+		// Display result
+		$alexa = new get_alexa_rank();
+		//Get the rank for the domain paulund.co.uk
+		echo $alexa->get_rank($url);
+	}
+	else _e("Invalid URL", "bodi0-bot-counter");
+}
+
+
 //EOF
 ?>

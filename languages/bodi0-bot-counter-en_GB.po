@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bodi0 bot visits counter\n"
-"POT-Creation-Date: 2014-01-24 13:15+0200\n"
-"PO-Revision-Date: 2014-01-24 13:16+0200\n"
+"POT-Creation-Date: 2014-01-27 15:15+0200\n"
+"PO-Revision-Date: 2014-01-27 15:15+0200\n"
 "Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -191,99 +191,104 @@ msgstr "Refresh statistics"
 msgid "Export as XML Spreadsheet"
 msgstr "Export as XML Spreadsheet"
 
-#: ../bodi0-bot-admin.php:537
+#: ../bodi0-bot-admin.php:561
 msgid "Filter (all)"
 msgstr "Filter (all)"
 
-#: ../bodi0-bot-admin.php:539
+#: ../bodi0-bot-admin.php:563
 msgid "Type here..."
 msgstr "Type here..."
 
-#: ../bodi0-bot-admin.php:541
+#: ../bodi0-bot-admin.php:565
 msgid "Reset"
 msgstr "Reset"
 
-#: ../bodi0-bot-admin.php:548 ../bodi0-bot-admin.php:653
+#: ../bodi0-bot-admin.php:572 ../bodi0-bot-admin.php:680
 msgid "Bot name"
 msgstr "Bot name"
 
-#: ../bodi0-bot-admin.php:550 ../bodi0-bot-admin.php:663
+#: ../bodi0-bot-admin.php:574 ../bodi0-bot-admin.php:690
 msgid "Bot identifier"
 msgstr "Bot identifier"
 
-#: ../bodi0-bot-admin.php:552
+#: ../bodi0-bot-admin.php:576
 msgid "Visits"
 msgstr "Visits"
 
-#: ../bodi0-bot-admin.php:554
+#: ../bodi0-bot-admin.php:578
 msgid "Last visit"
 msgstr "Last visit"
 
-#: ../bodi0-bot-admin.php:556
+#: ../bodi0-bot-admin.php:580
 msgid "IP address"
 msgstr "IP address"
 
-#: ../bodi0-bot-admin.php:571
+#: ../bodi0-bot-admin.php:595
 msgid "Edit this item"
 msgstr "Edit this item"
 
-#: ../bodi0-bot-admin.php:571
+#: ../bodi0-bot-admin.php:595
 msgid "Edit"
 msgstr "Edit"
 
-#: ../bodi0-bot-admin.php:574
+#: ../bodi0-bot-admin.php:598
 msgid "Block/Unblock"
 msgstr "Block/Unblock"
 
-#: ../bodi0-bot-admin.php:576
+#: ../bodi0-bot-admin.php:600
 msgid "Delete"
 msgstr "Delete"
 
-#: ../bodi0-bot-admin.php:587
+#: ../bodi0-bot-admin.php:611
 msgid "New name"
 msgstr "New name"
 
-#: ../bodi0-bot-admin.php:591
+#: ../bodi0-bot-admin.php:615
 msgid "up to 20 characters"
 msgstr "up to 20 characters"
 
-#: ../bodi0-bot-admin.php:594
+#: ../bodi0-bot-admin.php:618
 msgid "Update"
 msgstr "Update"
 
-#: ../bodi0-bot-admin.php:596 ../bodi0-bot-admin.php:617
+#: ../bodi0-bot-admin.php:620 ../bodi0-bot-admin.php:641
+#: ../bodi0-bot-admin.php:701 ../bodi0-bot-admin.php:736
 msgid "Cancel"
 msgstr "Cancel"
 
-#: ../bodi0-bot-admin.php:605
+#: ../bodi0-bot-admin.php:629
 msgid "Block the IP address and Bot identifier"
 msgstr "Block the IP address and Bot identifier"
 
-#: ../bodi0-bot-admin.php:612
+#: ../bodi0-bot-admin.php:636
 msgid "Unblock the IP address and Bot identifier"
 msgstr "Unblock the IP address and Bot identifier"
 
-#: ../bodi0-bot-admin.php:633
+#: ../bodi0-bot-admin.php:657
 msgid "TOTAL"
 msgstr "TOTAL"
 
-#: ../bodi0-bot-admin.php:635
+#: ../bodi0-bot-admin.php:659
 msgid "VISITS"
 msgstr "VISITS"
 
-#: ../bodi0-bot-admin.php:642 ../bodi0-bot-admin.php:673
+#: ../bodi0-bot-admin.php:666 ../bodi0-bot-admin.php:700
 msgid "Add new Bot"
 msgstr "Add new Bot"
 
-#: ../bodi0-bot-admin.php:658
+#: ../bodi0-bot-admin.php:669
+msgid "Get rankings"
+msgstr "Get rankings"
+
+#: ../bodi0-bot-admin.php:685
 msgid "up to 20 characters, required"
 msgstr "up to 20 characters, required"
 
-#: ../bodi0-bot-admin.php:668
+#: ../bodi0-bot-admin.php:695
 msgid "up to 100 characters, required"
 msgstr "up to 100 characters, required"
 
-#: ../bodi0-bot-admin.php:679
+#: ../bodi0-bot-admin.php:707
 msgid ""
 "Tip: You can also monitor misc web browser visits by defining appropriate "
 "user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
@@ -291,15 +296,47 @@ msgstr ""
 "Tip: You can also monitor misc web browser visits by defining appropriate "
 "user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
 
-#: ../bodi0-bot-admin.php:683
+#: ../bodi0-bot-admin.php:720
+msgid ""
+"Google: The most popular websites have a PageRank of 10, the least have a "
+"PageRank of 0"
+msgstr ""
+"Google: The most popular websites have a PageRank of 10, the least have a "
+"PageRank of 0"
+
+#: ../bodi0-bot-admin.php:722
+msgid "Alexa: The lower ranking is, the more popular the website is."
+msgstr "Alexa: The lower ranking is, the more popular the website is."
+
+#: ../bodi0-bot-admin.php:729
+msgid "URL"
+msgstr "URL"
+
+#: ../bodi0-bot-admin.php:733
+msgid "Get Google page rank"
+msgstr "Get Google page rank"
+
+#: ../bodi0-bot-admin.php:735
+msgid "Get Alexa page rank"
+msgstr "Get Alexa page rank"
+
+#: ../bodi0-bot-admin.php:743
+msgid "Rank"
+msgstr "Rank"
+
+#: ../bodi0-bot-admin.php:750
+msgid "Tip: You can also check the page rank of random web site"
+msgstr "Tip: You can also check the page rank of random web site"
+
+#: ../bodi0-bot-admin.php:755
 msgid "See the complete user agent string list of"
 msgstr "See the complete user agent string list of"
 
-#: ../bodi0-bot-admin.php:685
+#: ../bodi0-bot-admin.php:757
 msgid "bots"
 msgstr "bots"
 
-#: ../bodi0-bot-admin.php:688
+#: ../bodi0-bot-admin.php:759
 msgid ""
 "Remark: Some of the returned data includes GeoLite data created by MaxMind, "
 "available from http://www.maxmind.com"
@@ -307,21 +344,25 @@ msgstr ""
 "Remark: Some of the returned data includes GeoLite data created by MaxMind, "
 "available from http://www.maxmind.com"
 
-#: ../bodi0-bot-admin.php:690
+#: ../bodi0-bot-admin.php:761
 msgid "If you find this plugin useful, I wont mind if you buy me a beer"
 msgstr "If you find this plugin useful, I wont mind if you buy me a beer"
 
-#: ../bodi0-bot-ajax.php:44
+#: ../bodi0-bot-ajax.php:41
 msgid "Invalid AJAX action."
 msgstr "Invalid AJAX action."
 
-#: ../bodi0-bot-ajax.php:57
+#: ../bodi0-bot-ajax.php:77
 msgid "Location info"
 msgstr "Location info"
 
-#: ../bodi0-bot-ajax.php:66
+#: ../bodi0-bot-ajax.php:86
 msgid "Invalid IP address: "
 msgstr "Invalid IP address: "
+
+#: ../bodi0-bot-ajax.php:100 ../bodi0-bot-ajax.php:114
+msgid "Invalid URL"
+msgstr "Invalid URL"
 
 #: ../bodi0-bot-counter.php:186
 msgid "Bot visits counter"
@@ -336,9 +377,6 @@ msgstr "Administration"
 
 #~ msgid "Action"
 #~ msgstr "Action"
-
-#~ msgid "Settings"
-#~ msgstr "Settings"
 
 #~ msgid "You are not logged into Wordpress system."
 #~ msgstr "You are not logged into Wordpress system."

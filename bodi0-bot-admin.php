@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or exit;
 Plugin`s Administration panel
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.5
+Version: 0.6
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -46,7 +46,7 @@ if (isset($_POST['bot_banned_ip']) && isset($_POST['bot_banned_mark']) && ( wp_v
 	//Sanitize bot identifier
 	$bot_banned_mark = sanitize_text_field($_POST['bot_banned_mark']);
 	//
-	$url = wp_nonce_url('?page=bodi0-bot-counter','bot-nonce');
+	$url = wp_nonce_url('?page='.$_GET['page'],'bot-nonce');
 	if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
 		echo 'WP_Filesystem Error, unable to get credentials';
 		return; // stop processing here
@@ -311,7 +311,7 @@ RewriteRule . - [F]
 /*****************************************************************************************************************************/
 //Reset statistics
 if (isset($_GET['bot-counter']) && $_GET['bot-counter'] == 'reset' && ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
-	$wpdb->query ( $wpdb->prepare('UPDATE '.__TABLE__ .' SET bot_visits = %d, bot_last_visit = NULL ', 0) );
+	$wpdb->query ( $wpdb->prepare('UPDATE '.__TABLE__ .' SET bot_visits = %d, bot_last_visit = NULL, ip_address = NULL ', 0) );
 
 //Error handling
 	if (!empty($wpdb->last_error)) { 	$wpdb->print_error(); } 
@@ -320,13 +320,12 @@ if (isset($_GET['bot-counter']) && $_GET['bot-counter'] == 'reset' && ( wp_verif
 <div id="message" class="updated">
   <p>
     <?php _e("Bot visits Stats", "bodi0-bot-counter") ?>
-    <strong>
-    <?php _e(" were reset","bodi0-bot-counter") ?>
-    </strong>.</p>
+    <strong><?php _e(" were reset","bodi0-bot-counter") ?></strong>.</p>
 </div>
 <?php 
 	}
-}	 
+}	
+ 
 
 /***************************************************************************************************************************/
 //Add new bot
@@ -341,9 +340,7 @@ if (isset($_POST['bot-name']) && isset($_POST['bot-mark']) && trim($_POST['bot-n
 <div id="message" class="updated">
   <p>
     <?php _e("New bot", "bodi0-bot-counter"); ?>
-    <strong>
-    <?php _e("added", "bodi0-bot-counter"); ?>
-    </strong>.</p>
+    <strong><?php _e("added", "bodi0-bot-counter"); ?></strong>.</p>
 </div>
 <?php 
 	}
@@ -361,9 +358,7 @@ if (isset($_POST['bot-name']) && isset($_POST['bot-id']) && trim($_POST['bot-nam
 <div id="message" class="updated">
   <p>
     <?php _e("The bot`s name", "bodi0-bot-counter"); ?>
-    <strong>
-    <?php _e("was updated", "bodi0-bot-counter"); ?>
-    </strong>.</p>
+    <strong><?php _e("was updated", "bodi0-bot-counter"); ?></strong>.</p>
 </div>
 <?php 
 	}
@@ -380,9 +375,7 @@ if (isset($_GET['bot']) && $_GET['bot']=='delete' && !empty($_GET['bot-id']) && 
 <div id="message" class="updated">
   <p>
     <?php _e("The Bot", "bodi0-bot-counter"); ?>
-    <strong>
-    <?php _e("was deleted", "bodi0-bot-counter"); ?>
-    </strong>.</p>
+    <strong><?php _e("was deleted", "bodi0-bot-counter"); ?></strong>.</p>
 </div>
 <?php 
 	} 
@@ -445,7 +438,7 @@ div.wrap div.edit {min-width: 690px !important;width: 828px !important;}
 
 div.wrap div.edit{background-color: #FFFFFF;left: 0px;margin-top: 0px;padding-top: 0px;position: absolute;top: auto;padding-bottom: 0px;padding-left: 10px;margin-left: 4px;margin-bottom: 0px;height:4.4em;}
 
-div.wrap div.edit form{margin-top:0.4em;}
+div.wrap div.edit form{margin-top:1em;}
 .wrap form {display:inline-block !important}
 input[type="submit"].unblock{background: #5D824B !important; border: 1 px solid #466238 !important; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; color: white !important;}
 input[type="submit"].block{background: #820B0B !important; border: 1 px solid #670808 !important; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; color: white !important;}
@@ -455,24 +448,23 @@ input[type="submit"].block{background: #820B0B !important; border: 1 px solid #6
   <h2>
     <?php _e("Bot visits counter [Administration]","bodi0-bot-counter"); ?>
   </h2>
-  <p class="submitbox"><a href="?page=<?php echo $_GET['page']; ?>&amp;bot-counter=reset" class="submitdelete">
+  <p class="submitbox"><a href="?page=<?php echo $_GET['page']; ?>&amp;bot-counter=reset&amp;_wpnonce=<?php echo wp_create_nonce( 'bot-nonce' ) ?>" class="submitdelete">
     <?php _e("Reset Statistics", "bodi0-bot-counter"); ?>
     </a></p>
   <p>
-    <?php _e("The list, by default, is ordered by number of visits, click on table header arrows to re-order","bodi0-bot-counter"); ?>
-    . </p>
-    <p><?php _e("If you plan to block/unblock bots, a backup of your old .htaccess file will be created in case something goes wrong, called <code>.htaccess.bot-counter-backup.txt</code> in the same folder as your original file.", ""); ?></p>
-  <p class="alignright"> <a href="?page=bodi0-bot-counter" class="alignleft">
+    <?php _e("The list, by default, is ordered by number of visits, click on table header arrows to re-order","bodi0-bot-counter"); ?>. </p>
+    <p><?php _e("If you plan to block/unblock bots, a backup of your old .htaccess file will be created in case something goes wrong, called <code>.htaccess.bot-counter-backup.txt</code> in the same folder as your original file.", "bodi0-bot-counter"); ?></p>
+  <p class="alignright"> <a href="?page=<?php echo $_GET['page']?>&amp;_wpnonce=<?php echo wp_create_nonce( 'bot-nonce' ) ?>" class="alignleft">
     <?php _e("Refresh statistics", "bodi0-bot-counter"); ?>
     </a> &nbsp; </p>
-  <p class="alignright"> <a href="?page=bodi0-bot-counter&amp;bot-download=stats&amp;_wpnonce=<?php echo wp_create_nonce( 'bot-nonce' ) ?>" class="alignleft">
+  <p class="alignright"> <a href="?page=<?php echo $_GET['page'];?>&amp;bot-download=stats&amp;_wpnonce=<?php echo wp_create_nonce( 'bot-nonce' ) ?>" class="alignleft">
     <?php _e("Export as XML Spreadsheet","bodi0-bot-counter"); ?>
     </a> &nbsp;|&nbsp;</p>
   <?php
 //Get all results of visits
 $results = $wpdb->get_results('SELECT * FROM '.__TABLE__.' ORDER BY bot_visits DESC', ARRAY_A);
 ?>
-  <script type="text/javascript">
+<script type="text/javascript">
 var $ = jQuery.noConflict();
 
 /*Get geo location via AJAX call*/
@@ -492,6 +484,30 @@ var request = $.ajax({
 request.done(
 function( msg ) {
   $("#"+toggle_id).toggle(200);
+	$( "#"+content_id ).html( msg );
+});
+request.fail(
+function( jqXHR, textStatus, ev ) {
+  alert( "AJAX request failed: " + textStatus + ev  );
+});
+	
+}
+/*Get page rank info via AJAX call*/
+function get_pagerank(url, rank_type, content_id) {
+var new_url = $("#" + url).val();
+var request = $.ajax({
+	url: "<?php echo plugin_dir_url( __FILE__ ) ?>bodi0-bot-ajax.php",
+  type: "GET",
+	global: false,
+	cache: false,
+	data: { action: rank_type, url: new_url, _wpnonce: '<?php echo wp_create_nonce( 'bot-nonce' ) ?>'
+ },
+  dataType: "html",
+	async:true
+
+});
+request.done(
+function( msg ) {
 	$( "#"+content_id ).html( msg );
 });
 request.fail(
@@ -534,8 +550,7 @@ function filter2 (phrase, _id){
 </script>
   <table style="width: 50% !important" class="allignleft">
     <tr>
-      <td><?php _e("Filter (all)", "bodi0-bot-counter"); ?>
-        :
+      <td><?php _e("Filter (all)", "bodi0-bot-counter"); ?>:
         <input name="filter" id="filter" onkeyup="filter2(this, 'bot-table')" type="text" placeholder="<?php _e("Type here...","bodi0-bot-counter"); ?>" style="vertical-align:middle;width:200px"/>
         <a href="javascript:void(0)" onclick="document.getElementById('filter').value=''; filter2(document.getElementById('filter'), 'bot-table')">
         <?php _e("Reset","bodi0-bot-counter"); ?>
@@ -632,7 +647,7 @@ $i++; $j = $j + $result['bot_visits'];
         <th colspan="6"><strong>
           <?php _e("TOTAL","bodi0-bot-counter"); ?>
           </strong>: <strong><?php echo $i?></strong>, <strong>
-          <?php _e("VISITS"); ?>
+          <?php _e("VISITS", "bodi0-bot-counter"); ?>
           </strong>: <strong><?php echo $j;?></strong></th>
       </tr>
     </tfoot>
@@ -640,16 +655,19 @@ $i++; $j = $j + $result['bot_visits'];
   <br/>
   <a href="javascript:void(0)" onclick="jQuery('#add-bot').toggle(200)">
   <?php _e("Add new Bot","bodi0-bot-counter"); ?>
+  </a> | 
+  <a href="javascript:void(0)" onclick="jQuery('#pagerank').toggle(200)">
+  <?php _e("Get rankings","bodi0-bot-counter"); ?>
   </a>
   <div id="add-bot" style="display:none">
-    <form method="post" name="form" action="?page=<?php echo $_GET['page'];?>">
+    <form method="post" name="form-add-bot" action="?page=<?php echo $_GET['page'];?>">
       <?php 
 //Nonce field
 wp_nonce_field( 'bot-nonce' );
 ?>
-      <table style="margin:0;padding:0">
+      <table style="margin:0;padding:0; width:640px">
         <tr>
-          <td style="width:22%"><p>
+          <td style="width:16%"><p>
               <?php _e("Bot name","bodi0-bot-counter"); ?>
               :</p></td>
           <td><p>
@@ -671,20 +689,64 @@ wp_nonce_field( 'bot-nonce' );
         <tr>
           <td colspan="2"><p>
               <input type="submit" name="submit" class="button" value="<?php _e("Add new Bot","bodi0-bot-counter"); ?>"/>
+              &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#add-bot').hide()" class="button-secondary cancel"><?php _e("Cancel", "bodi0-bot-counter"); ?></a>
             </p></td>
         </tr>
       </table>
     </form>
     <p>*
-      <?php _e("Tip: You can also monitor misc web browser visits by defining appropriate user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;","bodi0-bot-counter"); ?>
+     <?php _e("Tip: You can also monitor misc web browser visits by defining appropriate user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;","bodi0-bot-counter"); ?>
+      .</p>
+
+  </div>
+  <br />
+<div id="pagerank" style="display:none">
+      <?php 
+//Nonce field
+wp_nonce_field( 'bot-nonce' );
+?><form action="javascript:void(0);" name="form-pagerank">
+      <table style="margin:0;padding:0; width:800px">
+      <tr>
+      <td colspan="2">
+      <?php _e("Google: The most popular websites have a PageRank of 10, the least have a PageRank of 0", "bodi0-bot-counter"); ?>. <br />
+
+      <?php _e("Alexa: The lower ranking is, the more popular the website is.", "bodi0-bot-counter"); ?>. 
+      </td>
+      </tr>
+        <tr>
+          <td style="width:10%">
+          
+              <p>
+              <?php _e("URL","bodi0-bot-counter"); ?>
+              :</p></td>
+          <td><p>
+              <input type="text" name="rank-url" id="rank-url" value="<?php echo home_url()?>" maxlength="100" size="35"/> 
+              <input type="button" name="button1" class="button button-primary" value="<?php _e("Get Google page rank","bodi0-bot-counter"); ?>"  onclick="get_pagerank('rank-url', 'get_pagerank_google', 'rank-holder');" /> 
+
+              <input type="button" name="button2" class="button button-primary" value="<?php _e("Get Alexa page rank","bodi0-bot-counter"); ?>" onclick="get_pagerank('rank-url', 'get_pagerank_alexa', 'rank-holder');" />            
+              &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#pagerank').hide()" class="button-secondary cancel"><?php _e("Cancel", "bodi0-bot-counter"); ?></a>
+              
+
+              </p>
+              </td>
+        </tr>
+      <tr><td colspan="2">
+      <p><?php _e("Rank", "bodi0-bot-counter"); ?> :
+      <strong><span id="rank-holder"> </span></strong></p>
+      </td></tr>
+      
+      </table>
+      </form>
+    <p>*
+      <?php _e("Tip: You can also check the page rank of random web site","bodi0-bot-counter"); ?>
       .</p>
   </div>
+  <p>&nbsp;</p>
   <p>
     <?php _e("See the complete user agent string list of","bodi0-bot-counter"); ?>
     <a href="http://user-agent-string.info/list-of-ua/bots" target="_blank">
     <?php _e("bots","bodi0-bot-counter"); ?>
-    </a></p>
-  <p>
+    </a><br />
     <?php _e("Remark: Some of the returned data includes GeoLite data created by MaxMind, available from http://www.maxmind.com", "bodi0-bot-counter"); ?>
   </p>
   <?php _e("If you find this plugin useful, I wont mind if you buy me a beer", "bodi0-bot-counter"); ?>

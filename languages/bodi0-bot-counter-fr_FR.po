@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bodi0 bot visits counter\n"
-"POT-Creation-Date: 2014-01-24 13:16+0200\n"
-"PO-Revision-Date: 2014-01-24 13:17+0200\n"
+"POT-Creation-Date: 2014-01-27 15:24+0200\n"
+"PO-Revision-Date: 2014-01-27 15:25+0200\n"
 "Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -188,8 +188,8 @@ msgid ""
 "backup.txt</code> in the same folder as your original file."
 msgstr ""
 "Si vous envisagez de bloquer/débloquer les bots, une sauvegarde de votre "
-"fichier htaccess vieux. Sera créé en cas de pépin, appelé <code>. Htaccess."
-"bot-contre-backup.txt </code> dans le même dossier que votre fichier "
+"fichier htaccess vieux. Sera créé en cas de pépin, appelé <code>.htaccess."
+"bot-counter-backup.txt </code> dans le même dossier que votre fichier "
 "original."
 
 #: ../bodi0-bot-admin.php:466
@@ -200,99 +200,104 @@ msgstr "Actualiser les statistiques"
 msgid "Export as XML Spreadsheet"
 msgstr "Exporter comme XML Spreadsheet"
 
-#: ../bodi0-bot-admin.php:537
+#: ../bodi0-bot-admin.php:561
 msgid "Filter (all)"
 msgstr "Filtre (tous)"
 
-#: ../bodi0-bot-admin.php:539
+#: ../bodi0-bot-admin.php:563
 msgid "Type here..."
 msgstr "Taper ici..."
 
-#: ../bodi0-bot-admin.php:541
+#: ../bodi0-bot-admin.php:565
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: ../bodi0-bot-admin.php:548 ../bodi0-bot-admin.php:653
+#: ../bodi0-bot-admin.php:572 ../bodi0-bot-admin.php:680
 msgid "Bot name"
 msgstr "Nom du robot"
 
-#: ../bodi0-bot-admin.php:550 ../bodi0-bot-admin.php:663
+#: ../bodi0-bot-admin.php:574 ../bodi0-bot-admin.php:690
 msgid "Bot identifier"
 msgstr "Identifiant de robot"
 
-#: ../bodi0-bot-admin.php:552
+#: ../bodi0-bot-admin.php:576
 msgid "Visits"
 msgstr "Visites"
 
-#: ../bodi0-bot-admin.php:554
+#: ../bodi0-bot-admin.php:578
 msgid "Last visit"
 msgstr "Dernière visite"
 
-#: ../bodi0-bot-admin.php:556
+#: ../bodi0-bot-admin.php:580
 msgid "IP address"
 msgstr "Adresse IP"
 
-#: ../bodi0-bot-admin.php:571
+#: ../bodi0-bot-admin.php:595
 msgid "Edit this item"
 msgstr "Modifier cet objet"
 
-#: ../bodi0-bot-admin.php:571
+#: ../bodi0-bot-admin.php:595
 msgid "Edit"
 msgstr "Modifier"
 
-#: ../bodi0-bot-admin.php:574
+#: ../bodi0-bot-admin.php:598
 msgid "Block/Unblock"
 msgstr "Bloquer / Débloquer"
 
-#: ../bodi0-bot-admin.php:576
+#: ../bodi0-bot-admin.php:600
 msgid "Delete"
 msgstr "Effacer"
 
-#: ../bodi0-bot-admin.php:587
+#: ../bodi0-bot-admin.php:611
 msgid "New name"
 msgstr "Un nouveau nom"
 
-#: ../bodi0-bot-admin.php:591
+#: ../bodi0-bot-admin.php:615
 msgid "up to 20 characters"
 msgstr "20 caractères maximum"
 
-#: ../bodi0-bot-admin.php:594
+#: ../bodi0-bot-admin.php:618
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: ../bodi0-bot-admin.php:596 ../bodi0-bot-admin.php:617
+#: ../bodi0-bot-admin.php:620 ../bodi0-bot-admin.php:641
+#: ../bodi0-bot-admin.php:701 ../bodi0-bot-admin.php:736
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../bodi0-bot-admin.php:605
+#: ../bodi0-bot-admin.php:629
 msgid "Block the IP address and Bot identifier"
 msgstr "Bloquer l'adresse IP et l'identifiant de Bot"
 
-#: ../bodi0-bot-admin.php:612
+#: ../bodi0-bot-admin.php:636
 msgid "Unblock the IP address and Bot identifier"
 msgstr "Debloquer l'adresse IP et l'identifiant de Bot"
 
-#: ../bodi0-bot-admin.php:633
+#: ../bodi0-bot-admin.php:657
 msgid "TOTAL"
 msgstr "TOTAL"
 
-#: ../bodi0-bot-admin.php:635
+#: ../bodi0-bot-admin.php:659
 msgid "VISITS"
 msgstr "VISITES"
 
-#: ../bodi0-bot-admin.php:642 ../bodi0-bot-admin.php:673
+#: ../bodi0-bot-admin.php:666 ../bodi0-bot-admin.php:700
 msgid "Add new Bot"
 msgstr "Ajouter un robot"
 
-#: ../bodi0-bot-admin.php:658
+#: ../bodi0-bot-admin.php:669
+msgid "Get rankings"
+msgstr "Obtenez les classements"
+
+#: ../bodi0-bot-admin.php:685
 msgid "up to 20 characters, required"
 msgstr "20 caractères maximum, nécessaire"
 
-#: ../bodi0-bot-admin.php:668
+#: ../bodi0-bot-admin.php:695
 msgid "up to 100 characters, required"
 msgstr "100 caractères maximum, nécessaire"
 
-#: ../bodi0-bot-admin.php:679
+#: ../bodi0-bot-admin.php:707
 msgid ""
 "Tip: You can also monitor misc web browser visits by defining appropriate "
 "user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
@@ -301,15 +306,48 @@ msgstr ""
 "définir chaîne user-agent approprié ici, par exemple &quot;Firefox&quot; ou "
 "&quot;Chrome&quot;"
 
-#: ../bodi0-bot-admin.php:683
+#: ../bodi0-bot-admin.php:720
+msgid ""
+"Google: The most popular websites have a PageRank of 10, the least have a "
+"PageRank of 0"
+msgstr ""
+"Google: Les sites les plus populaires ont un PageRank de 10, le moins avoir "
+"un PageRank de 0"
+
+#: ../bodi0-bot-admin.php:722
+msgid "Alexa: The lower ranking is, the more popular the website is."
+msgstr "Alexa: Le classement inférieur est, le plus populaire est le site."
+
+#: ../bodi0-bot-admin.php:729
+msgid "URL"
+msgstr "URL"
+
+#: ../bodi0-bot-admin.php:733
+msgid "Get Google page rank"
+msgstr "Obtenez Google page rank"
+
+#: ../bodi0-bot-admin.php:735
+msgid "Get Alexa page rank"
+msgstr "Obtenez Alexa page rank"
+
+#: ../bodi0-bot-admin.php:743
+msgid "Rank"
+msgstr "Classement"
+
+#: ../bodi0-bot-admin.php:750
+msgid "Tip: You can also check the page rank of random web site"
+msgstr ""
+"Astuce: Vous pouvez également consulter le page rank de site web aléatoire"
+
+#: ../bodi0-bot-admin.php:755
 msgid "See the complete user agent string list of"
 msgstr "Consultez la liste de chaîne user-agent complète de"
 
-#: ../bodi0-bot-admin.php:685
+#: ../bodi0-bot-admin.php:757
 msgid "bots"
 msgstr "robots"
 
-#: ../bodi0-bot-admin.php:688
+#: ../bodi0-bot-admin.php:759
 msgid ""
 "Remark: Some of the returned data includes GeoLite data created by MaxMind, "
 "available from http://www.maxmind.com"
@@ -317,23 +355,27 @@ msgstr ""
 "Remarque: Certaines des données renvoyées comprend des données GeoLite "
 "créées par MaxMind, disponibles à partir de http://www.maxmind.com"
 
-#: ../bodi0-bot-admin.php:690
+#: ../bodi0-bot-admin.php:761
 msgid "If you find this plugin useful, I wont mind if you buy me a beer"
 msgstr ""
 "Si vous trouvez ce plugin utile, je ne me dérange pas si vous me achetez une "
 "bière"
 
-#: ../bodi0-bot-ajax.php:44
+#: ../bodi0-bot-ajax.php:41
 msgid "Invalid AJAX action."
 msgstr "L'action AJAX non valide."
 
-#: ../bodi0-bot-ajax.php:57
+#: ../bodi0-bot-ajax.php:77
 msgid "Location info"
 msgstr "Informations sur la position"
 
-#: ../bodi0-bot-ajax.php:66
+#: ../bodi0-bot-ajax.php:86
 msgid "Invalid IP address: "
 msgstr "Adresse IP non valide:"
+
+#: ../bodi0-bot-ajax.php:100 ../bodi0-bot-ajax.php:114
+msgid "Invalid URL"
+msgstr "URL invalide"
 
 #: ../bodi0-bot-counter.php:186
 msgid "Bot visits counter"
@@ -348,9 +390,6 @@ msgstr "Administration"
 
 #~ msgid "Action"
 #~ msgstr "Action"
-
-#~ msgid "Settings"
-#~ msgstr "Settings"
 
 #~ msgid "You are not logged into Wordpress system."
 #~ msgstr "You are not logged into Wordpress system."
