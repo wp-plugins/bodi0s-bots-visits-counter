@@ -8,10 +8,10 @@ Stable tag: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Counts the visits from web spiders, crawlers and bots in your blog. 
+Counts the visits from web spiders, crawlers and bots in your blog, with ability to get the blog rankings.
 
 == Description ==
-Counts the visits from web spiders, crawlers and bots in your blog. 
+Counts the visits from web spiders, crawlers and bots in your blog, with ability to get the blog rankings from Google or Alexa. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
 You can block or unblock crawler, spider (or any other item), by IP address and identifier via .htaccess file.
 
@@ -32,7 +32,7 @@ None
 Added ability to get the blog rankings, from Google or Alexa.
 Small improvements, translation updated and bugfixes.
 
-=0.5=
+=0.5 =
 Updated filtering of the results. Now filter applies to any table column.
 Added option to block/unblock bot, by IP address and identifier via .htaccess file, the plugin creates a backup of your old .htaccess file in case something goes wrong, called .htaccess.bot-counter-backup.txt in the same folder as your original file.
 Removed unnecessary javascript files related to table results filtering.
