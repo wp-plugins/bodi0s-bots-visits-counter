@@ -13,7 +13,8 @@ Counts the visits from web spiders, crawlers and bots in your blog, with ability
 == Description ==
 Counts the visits from web spiders, crawlers and bots in your blog, with ability to get the blog rankings from Google or Alexa. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
-You can block or unblock crawler, spider (or any other item), by IP address and identifier via .htaccess file.
+You can block or unblock crawler, spider (or any other item), by IP address and identifier via .htaccess file. 
+As additional information you can get your blog rankings from Google PageRank or Alexa.
 
 == Installation ==
 This section describes how to install the plugin and get it working.
