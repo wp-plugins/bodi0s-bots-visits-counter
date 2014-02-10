@@ -3,7 +3,7 @@
 Plugin`s AJAX function calls
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.6
+Version: 0.7
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -37,7 +37,7 @@ require_once ('../../../wp-includes/pomo/translations.php');
 require_once ('../../../wp-includes/plugin.php');
 
 //A bit of security
-if(!in_array($action, array( 'get_location_info', 'get_pagerank_google', 'get_pagerank_alexa' ))) {
+if(!in_array($action, array( 'get_location_info', 'get_pagerank_google', 'get_pagerank_alexa', 'get_pagerank_statscrop' ))) {
 	_e( 'Invalid AJAX action.' ); 
 	exit();
 }
@@ -53,10 +53,14 @@ else {
 		get_pagerank_google($url);
 		break;
 		
-		
 		case 'get_pagerank_alexa' :
 		$url = isset($_GET['url'])? $_GET['url'] : '';
 		get_pagerank_alexa($url);
+		break;
+		
+		case 'get_pagerank_statscrop' :
+		$url = isset($_GET['url'])? $_GET['url'] : '';
+		get_pagerank_statscrop($url);
 		break;
 		
 		default : 
@@ -107,13 +111,24 @@ function get_pagerank_alexa($url) {
 	//If is valid URL
 	if (filter_var($url, FILTER_VALIDATE_URL )) {
 		// Display result
-		$alexa = new get_alexa_rank();
+		$alexa = new get_alexa_rank;
 		//Get the rank for the domain paulund.co.uk
 		echo $alexa->get_rank($url);
 	}
 	else _e("Invalid URL", "bodi0-bot-counter");
 }
 
+// Get Stastcrop page rank for given URL
+function get_pagerank_statscrop($url) {
+	// Include the class
+	require(dirname(__FILE__)."/class.statscrop-pagerank.php");
+	//If is valid URL
+	$url = str_replace(array("http://","https://","ftp://", "ftps://","127.0.0.1","localhost","/"), "", $url);
+		// Display result
+		$statscrop = new get_statscrop_rank;
+		//Get the rank for the domain 
+		$statscrop->get_rank($url);
+}
 
 //EOF
 ?>

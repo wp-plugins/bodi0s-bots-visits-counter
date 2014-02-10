@@ -5,7 +5,7 @@ Plugin Name: bodi0`s Bots visits counter
 Plugin URI: 
 Description: Count the visits from web spiders, crawlers and bots in your blog. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
-Version: 0.6
+Version: 0.7
 Text Domain: bodi0-bot-counter
 Domain Path: /languages
 Author: bodi0

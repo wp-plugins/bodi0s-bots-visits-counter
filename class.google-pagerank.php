@@ -3,7 +3,7 @@
 Plugin`s Page rank function calls (using the Google`s toolbar queries)
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.6
+Version: 0.7
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -38,17 +38,18 @@ private function genhash ($url) {
 }
 
 public function pagerank($url) {
-	$googleurl = 'http://toolbarqueries.google.com/tbr?client=navclient-auto&ch=' . $this->genhash($url) . '&features=Rank&q=info:' . urlencode($url);
+	$url = 'http://toolbarqueries.google.com/tbr?client=navclient-auto&ch=' . $this->genhash($url) . '&features=Rank&q=info:' . urlencode($url);
 	if(function_exists('curl_init')) {
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_URL, $googleurl);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_URL, $url);
 		$out = curl_exec($ch);
 		curl_close($ch);
 	} 
 	elseif (!function_exists('curl_init')) {
-		$out = file_get_contents($googleurl);
+		$out = file_get_contents($url);
 	}
 	else {
 		$out = 'N/A';

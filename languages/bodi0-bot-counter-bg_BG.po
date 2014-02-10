@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bodi0 bot visits counter\n"
-"POT-Creation-Date: 2014-01-27 15:27+0200\n"
-"PO-Revision-Date: 2014-01-27 15:34+0200\n"
+"POT-Creation-Date: 2014-02-10 12:59+0200\n"
+"PO-Revision-Date: 2014-02-10 13:01+0200\n"
 "Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
 "Language-Team: \n"
 "Language: bg_BG\n"
@@ -129,43 +129,43 @@ msgstr ""
 msgid "Bot visits Stats"
 msgstr "Статистика на посещенията"
 
-#: ../bodi0-bot-admin.php:324
+#: ../bodi0-bot-admin.php:323
 msgid " were reset"
 msgstr "беше нулирана"
 
-#: ../bodi0-bot-admin.php:343
+#: ../bodi0-bot-admin.php:342
 msgid "New bot"
 msgstr "Новото име на бот"
 
-#: ../bodi0-bot-admin.php:345
+#: ../bodi0-bot-admin.php:343
 msgid "added"
 msgstr "беше добавен"
 
-#: ../bodi0-bot-admin.php:363
+#: ../bodi0-bot-admin.php:360
 msgid "The bot`s name"
 msgstr "Името на бота "
 
-#: ../bodi0-bot-admin.php:365
+#: ../bodi0-bot-admin.php:361
 msgid "was updated"
 msgstr "беше обновено"
 
-#: ../bodi0-bot-admin.php:382
+#: ../bodi0-bot-admin.php:377
 msgid "The Bot"
 msgstr "Ботът"
 
-#: ../bodi0-bot-admin.php:384
+#: ../bodi0-bot-admin.php:378
 msgid "was deleted"
 msgstr "беше изтрит"
 
-#: ../bodi0-bot-admin.php:456
+#: ../bodi0-bot-admin.php:449
 msgid "Bot visits counter [Administration]"
 msgstr "Брояч на посещенията от ботове [Администрация]"
 
-#: ../bodi0-bot-admin.php:459
+#: ../bodi0-bot-admin.php:452
 msgid "Reset Statistics"
 msgstr "Нулиране на цялата статистика"
 
-#: ../bodi0-bot-admin.php:462
+#: ../bodi0-bot-admin.php:455
 msgid ""
 "The list, by default, is ordered by number of visits, click on table header "
 "arrows to re-order"
@@ -173,7 +173,7 @@ msgstr ""
 "Списъкът, по подразбиране, е подреден по брой посещения, кликнете на "
 "стрелките за пренареждане"
 
-#: ../bodi0-bot-admin.php:464
+#: ../bodi0-bot-admin.php:456
 msgid ""
 "If you plan to block/unblock bots, a backup of your old .htaccess file will "
 "be created in case something goes wrong, called <code>.htaccess.bot-counter-"
@@ -183,112 +183,112 @@ msgstr ""
 "файл ще бъде направено в случай, че нещо се обърка, с име <code>.htaccess."
 "bot-counter-backup.txt</code> в същата директория като оригинала."
 
-#: ../bodi0-bot-admin.php:466
+#: ../bodi0-bot-admin.php:458
 msgid "Refresh statistics"
 msgstr "Презареждане"
 
-#: ../bodi0-bot-admin.php:469
+#: ../bodi0-bot-admin.php:461
 msgid "Export as XML Spreadsheet"
 msgstr "Експорт като XML Spreadsheet"
 
-#: ../bodi0-bot-admin.php:561
+#: ../bodi0-bot-admin.php:553
 msgid "Filter (all)"
 msgstr "Филтър (всички)"
 
-#: ../bodi0-bot-admin.php:563
+#: ../bodi0-bot-admin.php:554
 msgid "Type here..."
 msgstr "Пишете тук..."
 
-#: ../bodi0-bot-admin.php:565
+#: ../bodi0-bot-admin.php:556
 msgid "Reset"
 msgstr "Нулирай"
 
-#: ../bodi0-bot-admin.php:572 ../bodi0-bot-admin.php:680
+#: ../bodi0-bot-admin.php:563 ../bodi0-bot-admin.php:671
 msgid "Bot name"
 msgstr "Име на бота"
 
-#: ../bodi0-bot-admin.php:574 ../bodi0-bot-admin.php:690
+#: ../bodi0-bot-admin.php:565 ../bodi0-bot-admin.php:681
 msgid "Bot identifier"
 msgstr "Самоличност"
 
-#: ../bodi0-bot-admin.php:576
+#: ../bodi0-bot-admin.php:567
 msgid "Visits"
 msgstr "Посещения"
 
-#: ../bodi0-bot-admin.php:578
+#: ../bodi0-bot-admin.php:569
 msgid "Last visit"
 msgstr "Последно посещение"
 
-#: ../bodi0-bot-admin.php:580
+#: ../bodi0-bot-admin.php:571
 msgid "IP address"
 msgstr "IP адрес"
 
-#: ../bodi0-bot-admin.php:595
+#: ../bodi0-bot-admin.php:586
 msgid "Edit this item"
 msgstr "Редактиране на този запис"
 
-#: ../bodi0-bot-admin.php:595
+#: ../bodi0-bot-admin.php:586
 msgid "Edit"
 msgstr "Реадкция"
 
-#: ../bodi0-bot-admin.php:598
+#: ../bodi0-bot-admin.php:589
 msgid "Block/Unblock"
 msgstr "Блокирай/Деблокирай"
 
-#: ../bodi0-bot-admin.php:600
+#: ../bodi0-bot-admin.php:591
 msgid "Delete"
 msgstr "Изтриване"
 
-#: ../bodi0-bot-admin.php:611
+#: ../bodi0-bot-admin.php:602
 msgid "New name"
 msgstr "Ново име"
 
-#: ../bodi0-bot-admin.php:615
+#: ../bodi0-bot-admin.php:606
 msgid "up to 20 characters"
 msgstr "до 20 символа"
 
-#: ../bodi0-bot-admin.php:618
+#: ../bodi0-bot-admin.php:609
 msgid "Update"
 msgstr "Обнови"
 
-#: ../bodi0-bot-admin.php:620 ../bodi0-bot-admin.php:641
-#: ../bodi0-bot-admin.php:701 ../bodi0-bot-admin.php:736
+#: ../bodi0-bot-admin.php:611 ../bodi0-bot-admin.php:632
+#: ../bodi0-bot-admin.php:692 ../bodi0-bot-admin.php:733
 msgid "Cancel"
 msgstr "Отмени"
 
-#: ../bodi0-bot-admin.php:629
+#: ../bodi0-bot-admin.php:620
 msgid "Block the IP address and Bot identifier"
 msgstr "Блокирай IP адреса и самоличността"
 
-#: ../bodi0-bot-admin.php:636
+#: ../bodi0-bot-admin.php:627
 msgid "Unblock the IP address and Bot identifier"
 msgstr "Деблокирай IP адреса и самоличността"
 
-#: ../bodi0-bot-admin.php:657
+#: ../bodi0-bot-admin.php:648
 msgid "TOTAL"
 msgstr "ОБЩО"
 
-#: ../bodi0-bot-admin.php:659
+#: ../bodi0-bot-admin.php:650
 msgid "VISITS"
 msgstr "ПОСЕЩЕНИЯ"
 
-#: ../bodi0-bot-admin.php:666 ../bodi0-bot-admin.php:700
+#: ../bodi0-bot-admin.php:657 ../bodi0-bot-admin.php:691
 msgid "Add new Bot"
 msgstr "Добави бот"
 
-#: ../bodi0-bot-admin.php:669
+#: ../bodi0-bot-admin.php:660 ../bodi0-bot-admin.php:731
 msgid "Get rankings"
 msgstr "Виж рейтингите"
 
-#: ../bodi0-bot-admin.php:685
+#: ../bodi0-bot-admin.php:676
 msgid "up to 20 characters, required"
 msgstr "до 20 символа, задължително"
 
-#: ../bodi0-bot-admin.php:695
+#: ../bodi0-bot-admin.php:686
 msgid "up to 100 characters, required"
 msgstr "до 100 символа, задължително"
 
-#: ../bodi0-bot-admin.php:707
+#: ../bodi0-bot-admin.php:698
 msgid ""
 "Tip: You can also monitor misc web browser visits by defining appropriate "
 "user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
@@ -296,7 +296,7 @@ msgstr ""
 "Съвет: Можете да следите и произволен уеб браузър като зададете подходящите "
 "стойности, например &quot;Firefox&quot; или &quot;Chrome&quot;"
 
-#: ../bodi0-bot-admin.php:720
+#: ../bodi0-bot-admin.php:711
 msgid ""
 "Google: The most popular websites have a PageRank of 10, the least have a "
 "PageRank of 0"
@@ -304,39 +304,51 @@ msgstr ""
 "Google: най-популярните сайтове имат PageRank 10, най-непопулярните PageRank "
 "0"
 
-#: ../bodi0-bot-admin.php:722
-msgid "Alexa: The lower ranking is, the more popular the website is."
-msgstr "Alexa: Колкото по-нисък е резултата, толкова по-популярен е сайта."
+#: ../bodi0-bot-admin.php:713
+msgid "Alexa: The lower ranking is, the more popular the website is"
+msgstr "Alexa: Колкото по-малък е рейтинга, толкова по-популярен е сайта"
 
-#: ../bodi0-bot-admin.php:729
+#: ../bodi0-bot-admin.php:714
+msgid ""
+"Statscrop: The higher the ranking is (5 maximum), the more popular the "
+"website is"
+msgstr ""
+"Statscrop: Колкото по-wisok е рейтинга (5 макс.), толкова по-популярен е "
+"сайта."
+
+#: ../bodi0-bot-admin.php:722
 msgid "URL"
 msgstr "URL"
 
-#: ../bodi0-bot-admin.php:733
+#: ../bodi0-bot-admin.php:727
 msgid "Get Google page rank"
 msgstr "Виж рейтинга от Google"
 
-#: ../bodi0-bot-admin.php:735
+#: ../bodi0-bot-admin.php:728
 msgid "Get Alexa page rank"
 msgstr "Виж рейтинга от Alexa"
 
-#: ../bodi0-bot-admin.php:743
+#: ../bodi0-bot-admin.php:729
+msgid "Get Statscrop rank"
+msgstr "Виж рейтинга от Statscrop"
+
+#: ../bodi0-bot-admin.php:740
 msgid "Rank"
 msgstr "Рейтинг"
 
-#: ../bodi0-bot-admin.php:750
+#: ../bodi0-bot-admin.php:747
 msgid "Tip: You can also check the page rank of random web site"
 msgstr "Съвет: Можете да проверите рейтинга и на произволен сайт"
 
-#: ../bodi0-bot-admin.php:755
+#: ../bodi0-bot-admin.php:752
 msgid "See the complete user agent string list of"
 msgstr "Вижте пълния списък от user agent символи на "
 
-#: ../bodi0-bot-admin.php:757
+#: ../bodi0-bot-admin.php:754
 msgid "bots"
 msgstr "ботовете"
 
-#: ../bodi0-bot-admin.php:759
+#: ../bodi0-bot-admin.php:756
 msgid ""
 "Remark: Some of the returned data includes GeoLite data created by MaxMind, "
 "available from http://www.maxmind.com"
@@ -344,7 +356,7 @@ msgstr ""
 "Забележка: Някои от данните за локация включват GeoLite данни, създадени от "
 "MaxMind, от сайта http://www.maxmind.com"
 
-#: ../bodi0-bot-admin.php:761
+#: ../bodi0-bot-admin.php:758
 msgid "If you find this plugin useful, I wont mind if you buy me a beer"
 msgstr ""
 "Ако смятате, че този плъгин е полезен, нямам против да ме черпите с бира"
@@ -353,15 +365,15 @@ msgstr ""
 msgid "Invalid AJAX action."
 msgstr "Невалидно AJAX действие"
 
-#: ../bodi0-bot-ajax.php:77
+#: ../bodi0-bot-ajax.php:81
 msgid "Location info"
 msgstr "Локация"
 
-#: ../bodi0-bot-ajax.php:86
+#: ../bodi0-bot-ajax.php:90
 msgid "Invalid IP address: "
 msgstr "Невалиден IP адрес: "
 
-#: ../bodi0-bot-ajax.php:100 ../bodi0-bot-ajax.php:114
+#: ../bodi0-bot-ajax.php:104 ../bodi0-bot-ajax.php:118
 msgid "Invalid URL"
 msgstr "Невалиден URL"
 

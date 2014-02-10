@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or exit;
 Plugin`s Administration panel
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.6
+Version: 0.7
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -122,7 +122,7 @@ RewriteRule . - [F]
 			}
 			//If RewriteEngine code do not exists in .htaccess then add it at the end of file
 			else {
-				$replacement = '<IfModule mod_rewrite.c>'."\n".$replacement."\n".'</IfModule>';
+				$replacement = "\n".'<IfModule mod_rewrite.c>'."\n".$replacement."\n".'</IfModule>'."\n";
 				$rewrite_code = $file_contents.$replacement;	
 			}
 				if ($file_operation != 4)
@@ -606,7 +606,7 @@ foreach($results as $result) {
         <?php _e("up to 20 characters","bodi0-bot-counter"); ?>
         )
         <input type="hidden" name="bot-id" value="<?php echo $result['id']?>" />
-        <input type="submit" name="submit" class="button" value="<?php _e("Update","bodi0-bot-counter"); ?>"/>
+        <input type="submit" name="submit" class="button-primary submit" value="<?php _e("Update","bodi0-bot-counter"); ?>"/>
         &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#edit-<?php echo $result['id']?>').hide()" class="button-secondary cancel">
         <?php _e("Cancel","bodi0-bot-counter"); ?>
         </a>
@@ -617,14 +617,14 @@ foreach($results as $result) {
         <input type="hidden" name="bot_banned_ip" value="<?php echo $result['ip_address']?>" />
         <input type="hidden" name="bot_banned_mark" value="<?php echo $result['bot_mark']?>" />
         <input type="hidden" name="action-type" value="block" />
-        <input type="submit" name="submit" class="button block" value="<?php _e("Block the IP address and Bot identifier","bodi0-bot-counter"); ?>" />
+        <input type="submit" name="submit" class="button-primary block" value="<?php _e("Block the IP address and Bot identifier","bodi0-bot-counter"); ?>" />
         <?php wp_nonce_field('bot-nonce');?>
       </form>
       <form name="form-unblock" method="post" action="?page=<?php echo $_GET['page']?>">
         <input type="hidden" name="bot_banned_ip" value="<?php echo $result['ip_address']?>" />
         <input type="hidden" name="bot_banned_mark" value="<?php echo $result['bot_mark']?>" />
         <input type="hidden" name="action-type" value="unblock" />
-        <input type="submit" name="submit" class="button unblock" value="<?php _e("Unblock the IP address and Bot identifier","bodi0-bot-counter");?>"  />
+        <input type="submit" name="submit" class="button-primary unblock" value="<?php _e("Unblock the IP address and Bot identifier","bodi0-bot-counter");?>"  />
         <?php wp_nonce_field('bot-nonce');?>
       </form>
       <form>
@@ -688,7 +688,7 @@ wp_nonce_field( 'bot-nonce' );
         </tr>
         <tr>
           <td colspan="2"><p>
-              <input type="submit" name="submit" class="button" value="<?php _e("Add new Bot","bodi0-bot-counter"); ?>"/>
+              <input type="submit" name="submit" class="button-primary submit" value="<?php _e("Add new Bot","bodi0-bot-counter"); ?>"/>
               &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#add-bot').hide()" class="button-secondary cancel"><?php _e("Cancel", "bodi0-bot-counter"); ?></a>
             </p></td>
         </tr>
@@ -710,7 +710,8 @@ wp_nonce_field( 'bot-nonce' );
       <td colspan="2">
       <?php _e("Google: The most popular websites have a PageRank of 10, the least have a PageRank of 0", "bodi0-bot-counter"); ?>. <br />
 
-      <?php _e("Alexa: The lower ranking is, the more popular the website is.", "bodi0-bot-counter"); ?>. 
+      <?php _e("Alexa: The lower ranking is, the more popular the website is", "bodi0-bot-counter"); ?>.<br />
+<?php _e("Statscrop: The higher the ranking is (5 maximum), the more popular the website is", "bodi0-bot-counter"); ?>. 
       </td>
       </tr>
         <tr>
@@ -721,9 +722,13 @@ wp_nonce_field( 'bot-nonce' );
               :</p></td>
           <td><p>
               <input type="text" name="rank-url" id="rank-url" value="<?php echo home_url()?>" maxlength="100" size="35"/> 
-              <input type="button" name="button1" class="button button-primary" value="<?php _e("Get Google page rank","bodi0-bot-counter"); ?>"  onclick="get_pagerank('rank-url', 'get_pagerank_google', 'rank-holder');" /> 
-
-              <input type="button" name="button2" class="button button-primary" value="<?php _e("Get Alexa page rank","bodi0-bot-counter"); ?>" onclick="get_pagerank('rank-url', 'get_pagerank_alexa', 'rank-holder');" />            
+              <select name="rank-type" id="rank-type">
+              <option value="get_pagerank_google"><?php _e("Get Google page rank","bodi0-bot-counter"); ?></option>
+              <option value="get_pagerank_alexa"><?php _e("Get Alexa page rank","bodi0-bot-counter"); ?></option>
+              <option value="get_pagerank_statscrop"><?php _e("Get Statscrop rank","bodi0-bot-counter"); ?></option>
+              </select>
+               <input type="button" name="get-ranking" class="button button-primary" value="<?php _e("Get rankings","bodi0-bot-counter")?>" onclick="get_pagerank('rank-url', $('#rank-type').val(), 'rank-holder');"/>
+                      
               &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#pagerank').hide()" class="button-secondary cancel"><?php _e("Cancel", "bodi0-bot-counter"); ?></a>
               
 

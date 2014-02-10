@@ -1,6 +1,6 @@
 <?php
 /**
-Plugin`s Page rank function calls (using the Alexa queries)
+Plugin`s Page rank function calls (using the Statscrop queries)
 Author: bodi0
 Email: budiony@gmail.com
 Version: 0.7
@@ -23,7 +23,7 @@ License: GPL2
 */
 
 
-class get_alexa_rank {
+class get_statscrop_rank {
 		
 	/**
 	 * Get the rank from alexa for the given domain
@@ -33,15 +33,18 @@ class get_alexa_rank {
 	 */
 	public function get_rank($domain){
 		//Alexa data URL	
-		$url = "http://data.alexa.com/data?cli=10&dat=snbamz&url=".$domain;
+		$url = "http://www.statscrop.com/www/".$domain;
 		if (function_exists("curl_init")) {
 			//Initialize the Curl  
 			$ch = curl_init();  
 				
 			//Set curl to return the data instead of printing it to the browser.  
+			curl_setopt($ch, CURLOPT_USERAGENT, "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.16");
+			curl_setopt($ch, CURLOPT_TRANSFERTEXT, true);
 			curl_setopt($ch, CURLOPT_HEADER, false);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT,2); 
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2); 
 				
 			//Set the URL  
 			curl_setopt($ch, CURLOPT_URL, $url);  
@@ -59,18 +62,34 @@ class get_alexa_rank {
 				$rank = 'N/A';
 			}
 			if ($data) {
-				//Parse xml data
-				$xml = new SimpleXMLElement($data);  
-				//Get popularity node
-				$popularity = $xml->xpath("//POPULARITY");
-				//Get the Rank attribute
-				$rank = (string)$popularity[0]['TEXT']; 
+				//Clean HTML
+				try {
+					$rank = new DOMDocument();
+					$rank->strictErrorChecking = false;
+					libxml_use_internal_errors(true);
+					//Parse the cleaned HTML
+					$rank->loadHTML($data);
+					
+					//Get all spans
+					$spans = $rank->getElementsByTagName('em');
+					//First array of elements
+					foreach ($spans as $span) {
+						//Second array of elements
+						foreach ($span->attributes as $attr) {
+							$page_rank = ($attr->nodeName=="title") ? $attr->nodeValue : '';
+						}
+					}
 				
-				
-
+					if (!empty($page_rank)) echo $page_rank .=  ' &nbsp;<a href="'.$url.'" target="_blank">More...</a>';
+					else echo 'N/A';
 			}
-		//Return value and show more details
-		return (!empty($rank)) ? $rank. ' &nbsp;<a href="'.$url.'" target="_blank">More...</a>' : 'N/A';
+		
+			catch (DOMException $e) {
+				echo $e->getMessage();
+			}	
+		}
+		//Return value
+		return (!empty($rank)) ? $rank : 'N/A';
 	}
 
 }
