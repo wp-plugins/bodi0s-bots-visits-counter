@@ -1,0 +1,400 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bodi0 bot visits counter\n"
+"POT-Creation-Date: 2014-02-10 13:01+0200\n"
+"PO-Revision-Date: 2014-02-10 13:01+0200\n"
+"Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../bodi0-bot-admin.php:159
+msgid "Invalid action type while attempting to update the file "
+msgstr "Invalid action type while attempting to update the file "
+
+#: ../bodi0-bot-admin.php:168
+msgid " was updated."
+msgstr " was updated."
+
+#: ../bodi0-bot-admin.php:170
+msgid ""
+"However it is good idea to manually check if everything is correct and the "
+"file is placed in the root folder of your web server. If you experience 500 "
+"Internal Server Error condition, then remove the following lines from "
+msgstr ""
+"However it is good idea to manually check if everything is correct and the "
+"file is placed in the root folder of your web server. If you experience 500 "
+"Internal Server Error condition, then remove the following lines from "
+
+#: ../bodi0-bot-admin.php:181
+msgid "The blocking rules for this bot were not found in file "
+msgstr "The blocking rules for this bot were not found in file "
+
+#: ../bodi0-bot-admin.php:182
+msgid ""
+"Did you removed from the file the below comments and content in-between "
+"(which were created by the plugin)?"
+msgstr ""
+"Did you removed from the file the below comments and content in-between "
+"(which were created by the plugin)?"
+
+#: ../bodi0-bot-admin.php:190
+msgid "The blocking rules for this bot were removed from file "
+msgstr "The blocking rules for this bot were removed from file "
+
+#: ../bodi0-bot-admin.php:198
+msgid "The blocking rules for this bot already exists in file "
+msgstr "The blocking rules for this bot already exists in file "
+
+#: ../bodi0-bot-admin.php:200
+msgid "No modification is necessary."
+msgstr "No modification is necessary."
+
+#: ../bodi0-bot-admin.php:208 ../bodi0-bot-admin.php:265
+msgid "Unable to write the new content to the file "
+msgstr "Unable to write the new content to the file "
+
+#: ../bodi0-bot-admin.php:217
+msgid "Please update this file manually by placing inside the following code: "
+msgstr ""
+"Please update this file manually by placing inside the following code: "
+
+#: ../bodi0-bot-admin.php:228
+msgid ""
+"In this case the system cannot modify it and you should remove the rules "
+"manually, for this bot everything in-between comments: "
+msgstr ""
+"In this case the system cannot modify it and you should remove the rules "
+"manually, for this bot everything in-between comments: "
+
+#: ../bodi0-bot-admin.php:233
+msgid "Wordpress do not have permissions to read/write the file "
+msgstr "Wordpress do not have permissions to read/write the file "
+
+#: ../bodi0-bot-admin.php:257
+msgid " was created."
+msgstr " was created."
+
+#: ../bodi0-bot-admin.php:259
+msgid ""
+"The configuration file does not existed and was created by the plugin. It is "
+"good idea to manually check if everything is correct and the file is placed "
+"in the root folder of your web server. If you experience 500 Internal Server "
+"Error condition, then remove the following lines from "
+msgstr ""
+"The configuration file does not existed and was created by the plugin. It is "
+"good idea to manually check if everything is correct and the file is placed "
+"in the root folder of your web server. If you experience 500 Internal Server "
+"Error condition, then remove the following lines from "
+
+#: ../bodi0-bot-admin.php:274
+msgid ""
+"Wordpress File System Error, insufficient permissions for accessing the file "
+msgstr ""
+"Wordpress File System Error, insufficient permissions for accessing the file "
+
+#: ../bodi0-bot-admin.php:283
+msgid ""
+"Modifying the web.config file on IIS is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+msgstr ""
+"Modifying the web.config file on IIS is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+
+#: ../bodi0-bot-admin.php:292
+msgid ""
+"Modifying the config file of nginx server is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+msgstr ""
+"Modifying the config file of nginx server is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+
+#: ../bodi0-bot-admin.php:301
+msgid ""
+"Modifying the config file of this web server is not supported. However you "
+"can manually change the file contents by writing the correct directives."
+msgstr ""
+"Modifying the config file of this web server is not supported. However you "
+"can manually change the file contents by writing the correct directives."
+
+#: ../bodi0-bot-admin.php:322
+msgid "Bot visits Stats"
+msgstr "Bot visits Stats"
+
+#: ../bodi0-bot-admin.php:323
+msgid " were reset"
+msgstr " were reset"
+
+#: ../bodi0-bot-admin.php:342
+msgid "New bot"
+msgstr "New bot"
+
+#: ../bodi0-bot-admin.php:343
+msgid "added"
+msgstr "added"
+
+#: ../bodi0-bot-admin.php:360
+msgid "The bot`s name"
+msgstr "The bot`s name"
+
+#: ../bodi0-bot-admin.php:361
+msgid "was updated"
+msgstr "was updated"
+
+#: ../bodi0-bot-admin.php:377
+msgid "The Bot"
+msgstr "The Bot"
+
+#: ../bodi0-bot-admin.php:378
+msgid "was deleted"
+msgstr "was deleted"
+
+#: ../bodi0-bot-admin.php:449
+msgid "Bot visits counter [Administration]"
+msgstr "Bot visits counter [Administration]"
+
+#: ../bodi0-bot-admin.php:452
+msgid "Reset Statistics"
+msgstr "Reset Statistics"
+
+#: ../bodi0-bot-admin.php:455
+msgid ""
+"The list, by default, is ordered by number of visits, click on table header "
+"arrows to re-order"
+msgstr ""
+"The list, by default, is ordered by number of visits, click on table header "
+"arrows to re-order"
+
+#: ../bodi0-bot-admin.php:456
+msgid ""
+"If you plan to block/unblock bots, a backup of your old .htaccess file will "
+"be created in case something goes wrong, called <code>.htaccess.bot-counter-"
+"backup.txt</code> in the same folder as your original file."
+msgstr ""
+"If you plan to block/unblock bots, a backup of your old .htaccess file will "
+"be created in case something goes wrong, called <code>.htaccess.bot-counter-"
+"backup.txt</code> in the same folder as your original file."
+
+#: ../bodi0-bot-admin.php:458
+msgid "Refresh statistics"
+msgstr "Refresh statistics"
+
+#: ../bodi0-bot-admin.php:461
+msgid "Export as XML Spreadsheet"
+msgstr "Export as XML Spreadsheet"
+
+#: ../bodi0-bot-admin.php:553
+msgid "Filter (all)"
+msgstr "Filter (all)"
+
+#: ../bodi0-bot-admin.php:554
+msgid "Type here..."
+msgstr "Type here..."
+
+#: ../bodi0-bot-admin.php:556
+msgid "Reset"
+msgstr "Reset"
+
+#: ../bodi0-bot-admin.php:563 ../bodi0-bot-admin.php:671
+msgid "Bot name"
+msgstr "Bot name"
+
+#: ../bodi0-bot-admin.php:565 ../bodi0-bot-admin.php:681
+msgid "Bot identifier"
+msgstr "Bot identifier"
+
+#: ../bodi0-bot-admin.php:567
+msgid "Visits"
+msgstr "Visits"
+
+#: ../bodi0-bot-admin.php:569
+msgid "Last visit"
+msgstr "Last visit"
+
+#: ../bodi0-bot-admin.php:571
+msgid "IP address"
+msgstr "IP address"
+
+#: ../bodi0-bot-admin.php:586
+msgid "Edit this item"
+msgstr "Edit this item"
+
+#: ../bodi0-bot-admin.php:586
+msgid "Edit"
+msgstr "Edit"
+
+#: ../bodi0-bot-admin.php:589
+msgid "Block/Unblock"
+msgstr "Block/Unblock"
+
+#: ../bodi0-bot-admin.php:591
+msgid "Delete"
+msgstr "Delete"
+
+#: ../bodi0-bot-admin.php:602
+msgid "New name"
+msgstr "New name"
+
+#: ../bodi0-bot-admin.php:606
+msgid "up to 20 characters"
+msgstr "up to 20 characters"
+
+#: ../bodi0-bot-admin.php:609
+msgid "Update"
+msgstr "Update"
+
+#: ../bodi0-bot-admin.php:611 ../bodi0-bot-admin.php:632
+#: ../bodi0-bot-admin.php:692 ../bodi0-bot-admin.php:733
+msgid "Cancel"
+msgstr "Cancel"
+
+#: ../bodi0-bot-admin.php:620
+msgid "Block the IP address and Bot identifier"
+msgstr "Block the IP address and Bot identifier"
+
+#: ../bodi0-bot-admin.php:627
+msgid "Unblock the IP address and Bot identifier"
+msgstr "Unblock the IP address and Bot identifier"
+
+#: ../bodi0-bot-admin.php:648
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#: ../bodi0-bot-admin.php:650
+msgid "VISITS"
+msgstr "VISITS"
+
+#: ../bodi0-bot-admin.php:657 ../bodi0-bot-admin.php:691
+msgid "Add new Bot"
+msgstr "Add new Bot"
+
+#: ../bodi0-bot-admin.php:660 ../bodi0-bot-admin.php:731
+msgid "Get rankings"
+msgstr "Get rankings"
+
+#: ../bodi0-bot-admin.php:676
+msgid "up to 20 characters, required"
+msgstr "up to 20 characters, required"
+
+#: ../bodi0-bot-admin.php:686
+msgid "up to 100 characters, required"
+msgstr "up to 100 characters, required"
+
+#: ../bodi0-bot-admin.php:698
+msgid ""
+"Tip: You can also monitor misc web browser visits by defining appropriate "
+"user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
+msgstr ""
+"Tip: You can also monitor misc web browser visits by defining appropriate "
+"user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
+
+#: ../bodi0-bot-admin.php:711
+msgid ""
+"Google: The most popular websites have a PageRank of 10, the least have a "
+"PageRank of 0"
+msgstr ""
+"Google: The most popular websites have a PageRank of 10, the least have a "
+"PageRank of 0"
+
+#: ../bodi0-bot-admin.php:713
+msgid "Alexa: The lower ranking is, the more popular the website is"
+msgstr "Alexa: The lower ranking is, the more popular the website is"
+
+#: ../bodi0-bot-admin.php:714
+msgid ""
+"Statscrop: The higher the ranking is (5 maximum), the more popular the "
+"website is"
+msgstr ""
+"Statscrop: The higher the ranking is (5 maximum), the more popular the "
+"website is"
+
+#: ../bodi0-bot-admin.php:722
+msgid "URL"
+msgstr "URL"
+
+#: ../bodi0-bot-admin.php:727
+msgid "Get Google page rank"
+msgstr "Get Google page rank"
+
+#: ../bodi0-bot-admin.php:728
+msgid "Get Alexa page rank"
+msgstr "Get Alexa page rank"
+
+#: ../bodi0-bot-admin.php:729
+msgid "Get Statscrop rank"
+msgstr "Get Statscrop rank"
+
+#: ../bodi0-bot-admin.php:740
+msgid "Rank"
+msgstr "Rank"
+
+#: ../bodi0-bot-admin.php:747
+msgid "Tip: You can also check the page rank of random web site"
+msgstr "Tip: You can also check the page rank of random web site"
+
+#: ../bodi0-bot-admin.php:752
+msgid "See the complete user agent string list of"
+msgstr "See the complete user agent string list of"
+
+#: ../bodi0-bot-admin.php:754
+msgid "bots"
+msgstr "bots"
+
+#: ../bodi0-bot-admin.php:756
+msgid ""
+"Remark: Some of the returned data includes GeoLite data created by MaxMind, "
+"available from http://www.maxmind.com"
+msgstr ""
+"Remark: Some of the returned data includes GeoLite data created by MaxMind, "
+"available from http://www.maxmind.com"
+
+#: ../bodi0-bot-admin.php:758
+msgid "If you find this plugin useful, I wont mind if you buy me a beer"
+msgstr "If you find this plugin useful, I wont mind if you buy me a beer"
+
+#: ../bodi0-bot-ajax.php:41
+msgid "Invalid AJAX action."
+msgstr "Invalid AJAX action."
+
+#: ../bodi0-bot-ajax.php:81
+msgid "Location info"
+msgstr "Location info"
+
+#: ../bodi0-bot-ajax.php:90
+msgid "Invalid IP address: "
+msgstr "Invalid IP address: "
+
+#: ../bodi0-bot-ajax.php:104 ../bodi0-bot-ajax.php:118
+msgid "Invalid URL"
+msgstr "Invalid URL"
+
+#: ../bodi0-bot-counter.php:186
+msgid "Bot visits counter"
+msgstr "Bot visits counter"
+
+#: ../bodi0-bot-counter.php:197
+msgid "Administration"
+msgstr "Administration"
+
+#~ msgid "Filter by name"
+#~ msgstr "Filter by name"
+
+#~ msgid "Action"
+#~ msgstr "Action"
+
+#~ msgid "You are not logged into Wordpress system."
+#~ msgstr "You are not logged into Wordpress system."
+
+#~ msgid "Bot mark"
+#~ msgstr "Bot mark"
+
+#~ msgid "Add Bot name"
+#~ msgstr "Add Bot name"
