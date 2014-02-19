@@ -3,7 +3,7 @@
 Plugin`s Page rank function calls (using the Google`s toolbar queries)
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.7
+Version: 0.8
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -21,6 +21,7 @@ License: GPL2
 		along with this program; if not, write to the Free Software
 		Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+if (!class_exists('get_google_pagerank')) {
 class get_google_pagerank {
 
 private function genhash ($url) {
@@ -66,6 +67,7 @@ public function pagerank($url) {
 	}
 }
 
+}
 }
 /* Usage
 /* The most popular websites have a PageRank of 10. The least have a PageRank of 0

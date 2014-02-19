@@ -3,7 +3,7 @@
 Plugin`s Page rank function calls (using the Statscrop queries)
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.7
+Version: 0.8
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -23,6 +23,7 @@ License: GPL2
 */
 
 
+if (!class_exists('get_statscrop_rank')) {
 class get_statscrop_rank {
 		
 	/**
@@ -92,6 +93,7 @@ class get_statscrop_rank {
 		return (!empty($rank)) ? $rank : 'N/A';
 	}
 
+}
 }
 
 /*Usage

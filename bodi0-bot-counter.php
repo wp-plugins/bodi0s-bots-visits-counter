@@ -5,7 +5,7 @@ Plugin Name: bodi0`s Bots visits counter
 Plugin URI: 
 Description: Count the visits from web spiders, crawlers and bots in your blog. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
-Version: 0.7
+Version: 0.8
 Text Domain: bodi0-bot-counter
 Domain Path: /languages
 Author: bodi0
@@ -35,7 +35,7 @@ $plugin = plugin_basename( __FILE__ );
 /*Security check*/
 $nonce = isset($_REQUEST['_wpnonce']) ? $_REQUEST['_wpnonce'] : '';
 /*Actions*/
-add_action('init', 'plugin_internationalization');
+add_action('init', 'bot_add_internationalization');
 /*Export statistics*/
 add_action('admin_init', 'call_bot_export');
 /*Admin menu page*/
@@ -43,7 +43,7 @@ add_action("admin_menu", "bot_admin_actions");
 /*Attach bot function to footer*/
 add_action("wp_footer","bot");
 /*Settings link*/
-add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
+add_filter( "plugin_action_links_$plugin", 'bot_add_administration_link' );
 
 
 /*Action executed when plugin is uninstalled*/
@@ -60,10 +60,14 @@ if(!defined('__TABLE__')) define ('__TABLE__', $wpdb->prefix."bodi0_bot_counter"
 
 
 // Install plugin
+if (!function_exists('bot_install')) {
 function bot_install() {
 		
 	global $wpdb;
-	
+		if (version_compare(PHP_VERSION, '5.2.4', '<'))	{
+			_bot_trigger_error('PHP version below 5.2.4 is not supported. Please upgrade to PHP 5.2.4 or newer.', E_USER_ERROR);
+			die();
+		}
 	// Important: Check if current user can install plugins
 	if ( !current_user_can( 'activate_plugins' ) )  return;
     $plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
@@ -133,8 +137,10 @@ function bot_install() {
  if(!empty($wpdb->last_error)) wp_die($wpdb->print_error());
  
 }
+}
 
 //Deactivate plugin
+if (!function_exists('bot_deactivate')) {
 function bot_deactivate() {
 	global $wpdb;
 
@@ -144,8 +150,10 @@ function bot_deactivate() {
     check_admin_referer( "deactivate-plugin_{$plugin}" );	
  if(!empty($wpdb->last_error)) wp_die($wpdb->print_error());
 } 
+}
 
 //Uninstall plugin
+if (!function_exists('bot_uninstall')) {
 function bot_uninstall() {
 	global $wpdb;
 	// Important: Check if current user can uninstall plugins
@@ -156,8 +164,10 @@ function bot_uninstall() {
   if(!empty($wpdb->last_error)) wp_die($wpdb->print_error());
 }
 
+}
 
 //Count bots visits
+if (!function_exists('bot')) {
 function bot() {
 	global $wpdb;
 
@@ -174,44 +184,56 @@ function bot() {
 	
 }
 
+}
 //Admin panel functions
+if (!function_exists('bot_menu')) {
 function bot_menu () {
 	// Important: Check if current user is logged
 	if ( !is_user_logged_in( ) )  die();
 	include_once ("bodi0-bot-admin.php");
 }
+}
 
 //Register admin menu
+if (!function_exists('bot_admin_actions')) {
 function bot_admin_actions() {
-		add_options_page(__("Bot visits counter","bodi0-bot-counter"), __("Bot visits counter","bodi0-bot-counter"), "manage_options" , "bodi0-bot-counter", "bot_menu");	
+		add_options_page("Bot visits counter","Bot visits counter", "manage_options" , "bodi0-bot-counter", "bot_menu");	
+}
 }
 
 //Translations
-function plugin_internationalization() {
+if (!function_exists('bot_add_internationalization')) {
+function bot_add_internationalization() {
   load_plugin_textdomain( 'bodi0-bot-counter', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
 }
 
 //Settings link
-function plugin_add_settings_link( $links ) {
+if (!function_exists('bot_add_administration_link')) {
+function bot_add_administration_link( $links ) {
     
 		$settings_link = '<a href="options-general.php?page='.basename( __FILE__ ).'">'.__("Administration","bodi0-bot-counter").'</a>';
   	array_push( $links, $settings_link );
   	return $links;
 }
+}
 
 //Custom error handling
 //_trigger_error('Some error message', E_USER_ERROR);
  
-function _trigger_error($message, $errno) {
+if (!function_exists('_bot_trigger_error')) {
+function _bot_trigger_error($message, $errno) {
 	if(isset($_GET['action']) && $_GET['action'] == 'error_scrape') {
-		echo '<strong>' . $message . '</strong>';
+		echo '<strong style="font-family:\'Open Sans\', Arial, Helvetica, sans-serif">' . $message . '</strong>';
 		exit;
 	} else {
 		trigger_error($message, $errno);
 	}
 }
+}
 /***************************************************************************************************************************/
 //Export statistics as Excel file
+if (!function_exists('call_bot_export')) {
 function call_bot_export() {
 	global $wbdb, $nonce;
 	if (isset($_GET['bot-download']) && trim($_GET['bot-download']) =='stats' && ( wp_verify_nonce( $nonce, 'bot-nonce' )) ) {
@@ -219,6 +241,9 @@ function call_bot_export() {
 		bot_export();
 	}
 } 
+}
+//Export data as XML
+if (!function_exists('bot_export')) {
 function bot_export() {
 	global $wpdb, $nonce;
 
@@ -258,5 +283,6 @@ function bot_export() {
 	if (!empty($wpdb->last_error)) { 	$wpdb->print_error(); }
 	}	
 
+}
 /****************************************************************************************************************************/
 ?>

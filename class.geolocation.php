@@ -3,7 +3,7 @@
 Description: Get location data based on IP address, using geoplugin.net website API
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.5
+Version: 0.8
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -23,6 +23,7 @@ License: GPL2
 
 */
 
+if (!class_exists('geo_location')) {
 class geo_location {
 	//
 	var $ip='';
@@ -70,6 +71,7 @@ class geo_location {
 		return $ip_data;
 		
 	} 
+}
 }
 
 ?>

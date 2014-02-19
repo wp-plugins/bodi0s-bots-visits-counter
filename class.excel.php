@@ -5,6 +5,7 @@
  * ExportData is the base class for exporters to specific file formats. See other
  * classes below.
  */
+if (!class_exists('ExportData')) {
 abstract class ExportData {
 	protected $exportTo; // Set in constructor to one of 'browser', 'file', 'string'
 	protected $stringData; // stringData so far, used if export string mode
@@ -94,10 +95,12 @@ abstract class ExportData {
 	abstract protected function generateRow($row);
 	
 }
+}
 
 /**
  * ExportDataTSV - Exports to TSV (tab separated value) format.
  */
+if (!class_exists('ExportDataTSV')) {
 class ExportDataTSV extends ExportData {
 	
 	function generateRow($row) {
@@ -114,10 +117,12 @@ class ExportDataTSV extends ExportData {
     header("Content-Disposition: attachment; filename=".basename($this->filename));
 	}
 }
+}
 
 /**
  * ExportDataCSV - Exports to CSV (comma separated value) format.
  */
+if (!class_exists('ExportDataCSV')) {
 class ExportDataCSV extends ExportData {
 	
 	function generateRow($row) {
@@ -133,6 +138,7 @@ class ExportDataCSV extends ExportData {
 		header("Content-type: text/csv");
 		header("Content-Disposition: attachment; filename=".basename($this->filename));
 	}
+}
 }
 
 
@@ -150,6 +156,7 @@ class ExportDataCSV extends ExportData {
  * Based on Excel XML code from Excel_XML (http://github.com/oliverschwarz/php-excel)
  *  by Oliver Schwarz
  */
+if (!class_exists('ExportDataExcel')) {
 class ExportDataExcel extends ExportData {
 	
 	const XmlHeader = "<?xml version=\"1.0\" encoding=\"%s\"?\>\n<Workbook xmlns=\"urn:schemas-microsoft-com:office:spreadsheet\" xmlns:x=\"urn:schemas-microsoft-com:office:excel\" xmlns:ss=\"urn:schemas-microsoft-com:office:spreadsheet\" xmlns:html=\"http://www.w3.org/TR/REC-html40\">";
@@ -239,4 +246,5 @@ class ExportDataExcel extends ExportData {
 		header("Content-Disposition: inline; filename=\"" . basename($this->filename) . "\"");
 	}
 	
+}
 }

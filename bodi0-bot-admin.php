@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or exit;
 Plugin`s Administration panel
 Author: bodi0
 Email: budiony@gmail.com
-Version: 0.7
+Version: 0.8
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -436,13 +436,12 @@ div.wrap div.edit {min-width: 690px !important;width: 828px !important;}
 
 
 
-div.wrap div.edit{background-color: #FFFFFF;left: 0px;margin-top: 0px;padding-top: 0px;position: absolute;top: auto;padding-bottom: 0px;padding-left: 10px;margin-left: 4px;margin-bottom: 0px;height:4.4em;}
+div.wrap div.edit{background-color: #F9F9F9;left: 0px;margin-top: 0px;padding-top: 0px;position: absolute;top: auto;padding-bottom: 0px;padding-left: 10px;margin-left: 4px;margin-bottom: 0px;height:4.4em;white-space: nowrap !important;}
 
-div.wrap div.edit form{margin-top:1em;}
+div.wrap div.edit form{margin-top:1.1em;}
 .wrap form {display:inline-block !important}
 input[type="submit"].unblock{background: #5D824B !important; border: 1 px solid #466238 !important; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; color: white !important;}
-input[type="submit"].block{background: #820B0B !important; border: 1 px solid #670808 !important; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; color: white !important;}
-
+input[type="submit"].block, input[type="submit"].block:hover{background: #820B0B !important; border: 1 px solid #670808 !important; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2) !important; color: white !important;}
 </style>
 <div class="wrap">
   <h2>
@@ -580,7 +579,7 @@ $i = 0; $j = 0;
 //The cycle
 foreach($results as $result) {
 	//
-	echo '<tr class="search-me"><td><strong>'.$result['bot_name'].'</strong>
+	echo '<tr class="search-me alternate"><td><strong>'.$result['bot_name'].'</strong>
 	<div class="row-actions"><span class="inline hide-if-no-js"><a class="editinline" 
 	href="javascript:void(0)" onclick="$(\'#edit-'.$result['id'].'\').show();"
 	title="'. __("Edit this item","bodi0-bot-counter").'">'.__("Edit","bodi0-bot-counter").'</a> | </span>
@@ -626,12 +625,11 @@ foreach($results as $result) {
         <input type="hidden" name="action-type" value="unblock" />
         <input type="submit" name="submit" class="button-primary unblock" value="<?php _e("Unblock the IP address and Bot identifier","bodi0-bot-counter");?>"  />
         <?php wp_nonce_field('bot-nonce');?>
-      </form>
-      <form>
         &nbsp;<a accesskey="c" href="javascript:void(0)" onclick="$('#block-<?php echo $result['id']?>').hide()" class="button-secondary cancel">
         <?php _e("Cancel","bodi0-bot-counter"); ?>
         </a>
       </form>
+        
     </div>
     <?php
 echo '</td></tr>'; //End edit 
@@ -759,6 +757,6 @@ wp_nonce_field( 'bot-nonce' );
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:inline-block !important">
     <input type="hidden" name="cmd" value="_s-xclick"/>
     <input type="hidden" name="hosted_button_id" value="LKG7EXVNPJ7EN"/>
-    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"  style="vertical-align: middle !important"/>
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!"  style="vertical-align: middle !important; border:0"/>
   </form>
 </div>
