@@ -1,6 +1,6 @@
 === bodi0`s Bots visits counter ===
-Contributors:
-Donate link:
+Contributors: budiony
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=LKG7EXVNPJ7EN&amp;currency_code=EUR
 Tags: website, visits, counter, bot, crawler, spider, statistics
 Requires at least: 3.1.0
 Tested up to: 3.8
