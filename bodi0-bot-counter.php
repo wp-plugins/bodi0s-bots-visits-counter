@@ -2,15 +2,15 @@
 defined( 'ABSPATH' ) or exit;
 /*
 Plugin Name: bodi0`s Bots visits counter
-Plugin URI: 
+Plugin URI: http://wordpress.org/plugins/bodi0s-bots-visits-counter/
 Description: Count the visits from web spiders, crawlers and bots in your blog. 
 Also can count any other visit, the plug-in is looking for patterns in user-agent string, which pattern can be customized.
-Version: 0.8
+Version: 0.8.1
 Text Domain: bodi0-bot-counter
 Domain Path: /languages
-Author: bodi0
+Author: Budiony Damyanov
+Author URI: mailto:budiony@gmail.com
 Email: budiony@gmail.com
-Author URI: 
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)

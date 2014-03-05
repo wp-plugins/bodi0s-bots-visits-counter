@@ -1,9 +1,10 @@
 <?php
 /*
 Plugin`s AJAX function calls
-Author: bodi0
+Author: Budiony Damyanov
+Author URI: mailto:budiony@gmail.com
 Email: budiony@gmail.com
-Version: 0.8
+Version: 0.8.1
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)

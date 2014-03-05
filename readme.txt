@@ -29,6 +29,9 @@ None
 None
 
 == Changelog ==
+= 0.8.1 =
+Minor changes and fixes.
+
 = 0.8 =
 Minor administration UI updates.
 Minor translation updates.

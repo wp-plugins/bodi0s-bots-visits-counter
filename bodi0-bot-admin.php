@@ -2,9 +2,10 @@
 defined( 'ABSPATH' ) or exit;
 /*
 Plugin`s Administration panel
-Author: bodi0
+Author: Budiony Damyanov
+Author URI: mailto:budiony@gmail.com
 Email: budiony@gmail.com
-Version: 0.8
+Version: 0.8.1
 License: GPL2
 
 		Copyright 2014  bodi0  (email : budiony@gmail.com)
@@ -639,16 +640,17 @@ $i++; $j = $j + $result['bot_visits'];
 
 ?>
       </tbody>
-    
-    <tfoot>
+ </table> 
+   <table class="widefat" style="min-width:740px !important; max-width:870px !important" id="bot-table">
+    <thead>
       <tr>
-        <th colspan="6"><strong>
+       <th colspan="6"><strong>
           <?php _e("TOTAL","bodi0-bot-counter"); ?>
           </strong>: <strong><?php echo $i?></strong>, <strong>
           <?php _e("VISITS", "bodi0-bot-counter"); ?>
           </strong>: <strong><?php echo $j;?></strong></th>
       </tr>
-    </tfoot>
+    </thead>
   </table>
   <br/>
   <a href="javascript:void(0)" onclick="jQuery('#add-bot').toggle(200)">
