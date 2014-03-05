@@ -1,0 +1,400 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bodi0 bot visits counter\n"
+"POT-Creation-Date: 2014-02-19 15:49+0200\n"
+"PO-Revision-Date: 2014-02-19 15:55+0200\n"
+"Last-Translator: Budyoni Damyanov <budiony@gmail.com>\n"
+"Language-Team: \n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../bodi0-bot-admin.php:159
+msgid "Invalid action type while attempting to update the file "
+msgstr "Невалидно действие в процеса на обновяване на файла "
+
+#: ../bodi0-bot-admin.php:168
+msgid " was updated."
+msgstr "беше обновено."
+
+#: ../bodi0-bot-admin.php:170
+msgid ""
+"However it is good idea to manually check if everything is correct and the "
+"file is placed in the root folder of your web server. If you experience 500 "
+"Internal Server Error condition, then remove the following lines from "
+msgstr ""
+"Впрочем е добра идея ръчно да проверите дали всичко е наред и дали файла се "
+"намира в главната директория на уеб сървъра. Ако получавате грешка 500 "
+"Internal Server Error, тогава премахнете следните редове от "
+
+#: ../bodi0-bot-admin.php:181
+msgid "The blocking rules for this bot were not found in file "
+msgstr "Блокиращите правила не бяха намерени във файла "
+
+#: ../bodi0-bot-admin.php:182
+msgid ""
+"Did you removed from the file the below comments and content in-between "
+"(which were created by the plugin)?"
+msgstr ""
+"Дали не сте премахнали ръчно коментарите и съдържанието между тях (които "
+"бяха създадени от плъгина)?"
+
+#: ../bodi0-bot-admin.php:190
+msgid "The blocking rules for this bot were removed from file "
+msgstr "Блокиращите правила за този бот бяха премахнати от файла "
+
+#: ../bodi0-bot-admin.php:198
+msgid "The blocking rules for this bot already exists in file "
+msgstr "Блокиращите правила за този бот вече съществуват във файла "
+
+#: ../bodi0-bot-admin.php:200
+msgid "No modification is necessary."
+msgstr "Не е нужна модификация"
+
+#: ../bodi0-bot-admin.php:208 ../bodi0-bot-admin.php:265
+msgid "Unable to write the new content to the file "
+msgstr "Невъзможно е записването на новото съдържание във файла "
+
+#: ../bodi0-bot-admin.php:217
+msgid "Please update this file manually by placing inside the following code: "
+msgstr "Моля, обновете този файл ръчно като поставите следния код: "
+
+#: ../bodi0-bot-admin.php:228
+msgid ""
+"In this case the system cannot modify it and you should remove the rules "
+"manually, for this bot everything in-between comments: "
+msgstr ""
+"В този случай системата не може да го промени автоматично, трябва ръчно да "
+"премахнете правилата, за този бот всичко между коментарите: "
+
+#: ../bodi0-bot-admin.php:233
+msgid "Wordpress do not have permissions to read/write the file "
+msgstr "Wordpress няма права да чете/записва файла"
+
+#: ../bodi0-bot-admin.php:257
+msgid " was created."
+msgstr " беше създаден."
+
+#: ../bodi0-bot-admin.php:259
+msgid ""
+"The configuration file does not existed and was created by the plugin. It is "
+"good idea to manually check if everything is correct and the file is placed "
+"in the root folder of your web server. If you experience 500 Internal Server "
+"Error condition, then remove the following lines from "
+msgstr ""
+"Конфигурационният файл не съществуваше и беше създаден от плъгина. Добра "
+"идея е ръчно да проверите дали всичко е наред и дали файла се намира в "
+"главната директория на уеб сървъра. Ако получавате грешка 500 Internal "
+"Server Error, тогава премахнете следните редове от "
+
+#: ../bodi0-bot-admin.php:274
+msgid ""
+"Wordpress File System Error, insufficient permissions for accessing the file "
+msgstr "Wordpress системна грешка, недостатъчни права за достъп до файла "
+
+#: ../bodi0-bot-admin.php:283
+msgid ""
+"Modifying the web.config file on IIS is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+msgstr ""
+"Модифицирането на файла web.config не се поддържа. Впрочем можете ръчно да "
+"промените съдържанието му като поставите необходимите директиви."
+
+#: ../bodi0-bot-admin.php:292
+msgid ""
+"Modifying the config file of nginx server is not supported. However you can "
+"manually change the file contents by writing the correct directives."
+msgstr ""
+"Модифицирането на конфигурационния файл на nginx сървъра не се поддържа. "
+"Впрочем можете ръчно да промените съдържанието му като поставите "
+"необходимите директиви."
+
+#: ../bodi0-bot-admin.php:301
+msgid ""
+"Modifying the config file of this web server is not supported. However you "
+"can manually change the file contents by writing the correct directives."
+msgstr ""
+"Модифицирането на конфигурационния файл на този уеб сървър не се поддържа. "
+"Впрочем можете ръчно да промените съдържанието му като поставите "
+"необходимите директиви."
+
+#: ../bodi0-bot-admin.php:322
+msgid "Bot visits Stats"
+msgstr "Статистика на посещенията"
+
+#: ../bodi0-bot-admin.php:323
+msgid " were reset"
+msgstr "беше нулирана"
+
+#: ../bodi0-bot-admin.php:342
+msgid "New bot"
+msgstr "Новото име на бот"
+
+#: ../bodi0-bot-admin.php:343
+msgid "added"
+msgstr "беше добавен"
+
+#: ../bodi0-bot-admin.php:360
+msgid "The bot`s name"
+msgstr "Името на бота "
+
+#: ../bodi0-bot-admin.php:361
+msgid "was updated"
+msgstr "беше обновено"
+
+#: ../bodi0-bot-admin.php:377
+msgid "The Bot"
+msgstr "Ботът"
+
+#: ../bodi0-bot-admin.php:378
+msgid "was deleted"
+msgstr "беше изтрит"
+
+#: ../bodi0-bot-admin.php:448
+msgid "Bot visits counter [Administration]"
+msgstr "Брояч на посещенията от ботове [Администрация]"
+
+#: ../bodi0-bot-admin.php:451
+msgid "Reset Statistics"
+msgstr "Нулиране на цялата статистика"
+
+#: ../bodi0-bot-admin.php:454
+msgid ""
+"The list, by default, is ordered by number of visits, click on table header "
+"arrows to re-order"
+msgstr ""
+"Списъкът, по подразбиране, е подреден по брой посещения, кликнете на "
+"стрелките за пренареждане"
+
+#: ../bodi0-bot-admin.php:455
+msgid ""
+"If you plan to block/unblock bots, a backup of your old .htaccess file will "
+"be created in case something goes wrong, called <code>.htaccess.bot-counter-"
+"backup.txt</code> in the same folder as your original file."
+msgstr ""
+"Ако планирате да блокирате/деблокирате ботове, копие на стария .htaccess "
+"файл ще бъде направено в случай, че нещо се обърка, с име <code>.htaccess."
+"bot-counter-backup.txt</code> в същата директория като оригинала."
+
+#: ../bodi0-bot-admin.php:457
+msgid "Refresh statistics"
+msgstr "Презареждане"
+
+#: ../bodi0-bot-admin.php:460
+msgid "Export as XML Spreadsheet"
+msgstr "Експорт като XML Spreadsheet"
+
+#: ../bodi0-bot-admin.php:552
+msgid "Filter (all)"
+msgstr "Филтър (всички)"
+
+#: ../bodi0-bot-admin.php:553
+msgid "Type here..."
+msgstr "Пишете тук..."
+
+#: ../bodi0-bot-admin.php:555
+msgid "Reset"
+msgstr "Нулиране "
+
+#: ../bodi0-bot-admin.php:562 ../bodi0-bot-admin.php:669
+msgid "Bot name"
+msgstr "Име на бота"
+
+#: ../bodi0-bot-admin.php:564 ../bodi0-bot-admin.php:679
+msgid "Bot identifier"
+msgstr "Самоличност"
+
+#: ../bodi0-bot-admin.php:566
+msgid "Visits"
+msgstr "Посещения"
+
+#: ../bodi0-bot-admin.php:568
+msgid "Last visit"
+msgstr "Последно посещение"
+
+#: ../bodi0-bot-admin.php:570
+msgid "IP address"
+msgstr "IP адрес"
+
+#: ../bodi0-bot-admin.php:585
+msgid "Edit this item"
+msgstr "Редактиране на този запис"
+
+#: ../bodi0-bot-admin.php:585
+msgid "Edit"
+msgstr "Реадкция"
+
+#: ../bodi0-bot-admin.php:588
+msgid "Block/Unblock"
+msgstr "Блокиране/Деблокиране"
+
+#: ../bodi0-bot-admin.php:590
+msgid "Delete"
+msgstr "Изтриване"
+
+#: ../bodi0-bot-admin.php:601
+msgid "New name"
+msgstr "Ново име"
+
+#: ../bodi0-bot-admin.php:605
+msgid "up to 20 characters"
+msgstr "до 20 символа"
+
+#: ../bodi0-bot-admin.php:608
+msgid "Update"
+msgstr "Обнови"
+
+#: ../bodi0-bot-admin.php:610 ../bodi0-bot-admin.php:629
+#: ../bodi0-bot-admin.php:690 ../bodi0-bot-admin.php:730
+msgid "Cancel"
+msgstr "Отмени"
+
+#: ../bodi0-bot-admin.php:619
+msgid "Block the IP address and Bot identifier"
+msgstr "Блокирай IP адрес и самоличност"
+
+#: ../bodi0-bot-admin.php:626
+msgid "Unblock the IP address and Bot identifier"
+msgstr "Деблокирай IP адрес и самоличност"
+
+#: ../bodi0-bot-admin.php:646
+msgid "TOTAL"
+msgstr "ОБЩО"
+
+#: ../bodi0-bot-admin.php:648
+msgid "VISITS"
+msgstr "ПОСЕЩЕНИЯ"
+
+#: ../bodi0-bot-admin.php:655 ../bodi0-bot-admin.php:689
+msgid "Add new Bot"
+msgstr "Добавяне на бот"
+
+#: ../bodi0-bot-admin.php:658 ../bodi0-bot-admin.php:728
+msgid "Get rankings"
+msgstr "Показване на рейтингите"
+
+#: ../bodi0-bot-admin.php:674
+msgid "up to 20 characters, required"
+msgstr "до 20 символа, задължително"
+
+#: ../bodi0-bot-admin.php:684
+msgid "up to 100 characters, required"
+msgstr "до 100 символа, задължително"
+
+#: ../bodi0-bot-admin.php:696
+msgid ""
+"Tip: You can also monitor misc web browser visits by defining appropriate "
+"user-agent string here, for example &quot;Firefox&quot; or &quot;Chrome&quot;"
+msgstr ""
+"Съвет: Можете да следите и произволен уеб браузър като зададете подходящите "
+"стойности, например &quot;Firefox&quot; или &quot;Chrome&quot;"
+
+#: ../bodi0-bot-admin.php:709
+msgid ""
+"Google: The most popular websites have a PageRank of 10, the least have a "
+"PageRank of 0"
+msgstr ""
+"Google: Най-популярните сайтове имат PageRank 10, най-непопулярните PageRank "
+"0"
+
+#: ../bodi0-bot-admin.php:711
+msgid "Alexa: The lower ranking is, the more popular the website is"
+msgstr "Alexa: Колкото по-малък е рейтинга, толкова по-популярен е сайта"
+
+#: ../bodi0-bot-admin.php:712
+msgid ""
+"Statscrop: The higher the ranking is (5 maximum), the more popular the "
+"website is"
+msgstr ""
+"Statscrop: Колкото по-wisok е рейтинга (5 макс.), толкова по-популярен е "
+"сайта."
+
+#: ../bodi0-bot-admin.php:719
+msgid "URL"
+msgstr "URL"
+
+#: ../bodi0-bot-admin.php:724
+msgid "Get Google page rank"
+msgstr "Рейтинг от Google"
+
+#: ../bodi0-bot-admin.php:725
+msgid "Get Alexa page rank"
+msgstr "Рейтинг от Alexa"
+
+#: ../bodi0-bot-admin.php:726
+msgid "Get Statscrop rank"
+msgstr "Рейтинг от Statscrop"
+
+#: ../bodi0-bot-admin.php:737
+msgid "Rank"
+msgstr "Рейтинг"
+
+#: ../bodi0-bot-admin.php:744
+msgid "Tip: You can also check the page rank of random web site"
+msgstr "Съвет: Можете да проверите рейтинга и на произволен сайт"
+
+#: ../bodi0-bot-admin.php:749
+msgid "See the complete user agent string list of"
+msgstr "Вижте пълния списък от user agent символи на "
+
+#: ../bodi0-bot-admin.php:751
+msgid "bots"
+msgstr "ботовете"
+
+#: ../bodi0-bot-admin.php:753
+msgid ""
+"Remark: Some of the returned data includes GeoLite data created by MaxMind, "
+"available from http://www.maxmind.com"
+msgstr ""
+"Забележка: Някои от данните за локация включват GeoLite данни, създадени от "
+"MaxMind, от сайта http://www.maxmind.com"
+
+#: ../bodi0-bot-admin.php:755
+msgid "If you find this plugin useful, I wont mind if you buy me a beer"
+msgstr ""
+"Ако смятате, че този плъгин е полезен, нямам против да ме черпите с бира"
+
+#: ../bodi0-bot-ajax.php:41
+msgid "Invalid AJAX action."
+msgstr "Невалидно AJAX действие"
+
+#: ../bodi0-bot-ajax.php:81
+msgid "Location info"
+msgstr "Локация"
+
+#: ../bodi0-bot-ajax.php:90
+msgid "Invalid IP address: "
+msgstr "Невалиден IP адрес: "
+
+#: ../bodi0-bot-ajax.php:104 ../bodi0-bot-ajax.php:118
+msgid "Invalid URL"
+msgstr "Невалиден URL"
+
+#: ../bodi0-bot-counter.php:215
+msgid "Administration"
+msgstr "Администрация"
+
+#~ msgid "Bot visits counter"
+#~ msgstr "Брояч на посещенията на ботове"
+
+#~ msgid "Filter by name"
+#~ msgstr "Филтър по име"
+
+#~ msgid "Action"
+#~ msgstr "Действие"
+
+#~ msgid "You are not logged into Wordpress system."
+#~ msgstr "Не сте се логнали в системата."
+
+#~ msgid "Bot mark"
+#~ msgstr "Признак на бота"
+
+#~ msgid "Add Bot name"
+#~ msgstr "Добави бот"
