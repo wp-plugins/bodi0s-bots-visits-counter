@@ -3,7 +3,7 @@ Contributors: budiony
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=LKG7EXVNPJ7EN&amp;currency_code=EUR
 Tags: website, visits, counter, bot, crawler, spider, statistics
 Requires at least: 3.1.0
-Tested up to: 3.8.1
+Tested up to: 4.2.2
 Stable tag: 0.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
